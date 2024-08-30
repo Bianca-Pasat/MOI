@@ -5,7 +5,7 @@ multiomicsintegrator: mcia usage
 the pipeline schema and can no longer be found in markdown files.*
 
 Introduction
-============
+------------
 
 .. raw:: html
 
@@ -73,7 +73,7 @@ Additionally, you need to change parameters in
    Change the location of the files appropriately
 
 Important
-=========
+---------
 
    .. rubric:: Sample names have to be in the first column or in a
       column called sampleID and **need to match** the column names of
