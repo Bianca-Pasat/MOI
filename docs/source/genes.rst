@@ -208,9 +208,9 @@ Functionality
 
 The pipeline initially downloads SRA codes and converts the runs into
 fastq files. Alternativey you can provide local fastq files. It then
-performs quality control with `FASTQC <../modules/nf-core/fastqc>`__ and
+performs quality control with `FASTQC`__ and
 then automatically detects and removes adapters with
-`Trimgalore <../modules/nf-core/trimgalore>`__.
+`Trimgalore`__.
 
 Each of the above steps can be skipped, for example if you don’t want to
 perform quality control, you can specify in the params_genes.yml file:
@@ -221,7 +221,7 @@ perform quality control, you can specify in the params_genes.yml file:
      skip_qc_genes= true
    }
 
-It then employs `salmon <../modules/nf-core/salmon>`__ in order to
+It then employs `salmon`__ in order to
 obtain quantification files that are outputed in
 :math:`OUTDIR/salmon_genes/`\ sampleID/quant.sf directory.
 
@@ -264,9 +264,9 @@ Preprocess
 After the formation of the count matrix there is an optional module
 `preprocess_matrix <../subworkflows/local/preprocess_matrix.nf>`__ that
 performs preprocessing steps on the count matrix. Namely, the user can
-perform `filtering <../modules/local/mom_filter>`__,
-`normalization <../modules/local/mom_norm/>`__ and `batch
-effect <../modules/local/mom_filter/>`__ correction, depending on the
+perform `filtering`__,
+`normalization`__ and `batch
+effect`__ correction, depending on the
 state of their data.
 
    .. rubric:: Input_genes should have a column named condition
@@ -309,7 +309,7 @@ Note
      alg_genes     = 'edger' # Default
    }
 
-edger `edger <../modules/local/edger>`__
+edger `edger`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: bash
@@ -320,7 +320,7 @@ edger `edger <../modules/local/edger>`__
        edgercontrasts_genes            = "TNBC-non_TNBC"  # contrasts of interest. Values have to be present in the samplesheet_genes.csv
    }
 
-DESeq2 `deseq <../modules/local/deseq2>`__
+DESeq2 `deseq`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Important note**
@@ -340,7 +340,7 @@ DESeq2 `deseq <../modules/local/deseq2>`__
        deseq2single_matrix             = true   # if the input is a single matrix or a directory of files
    }
 
-RankProduct `rankprod <../modules/local/rankprod>`__
+RankProduct `rankprod`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Inputs for to run RankProduct are the same, with a single difference:
@@ -367,8 +367,8 @@ PEA
 ---
 
 Last step of the analysis is to perform pathway enrichment analysis with
-`clusterprofiler <../modules/local/clusterprofiler>`__ or biotranslator
-`biotranslator <../modules/local/biotranslator>`__.
+`clusterprofiler`__ or biotranslator
+`biotranslator`__.
 
 .. code:: bash
 
