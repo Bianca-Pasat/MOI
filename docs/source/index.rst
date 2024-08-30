@@ -23,7 +23,7 @@ Contents
 .. toctree::
 
 
-   Installation
-   Genes
-   Isoforms
+   installation
+   genes
+   isoforms
 
