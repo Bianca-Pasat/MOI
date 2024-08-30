@@ -1,12 +1,6 @@
-multiomicsintegrator: proteins usage
+Proteins
 ====================================
 
-Introduction
-============
-
-.. raw:: html
-
-   <!-- TODO nf-core: Add documentation about anything specific to running your pipeline. For general topics, please point to (and add to) the main nf-core website. -->
 
 Nessecary inputs
 ----------------
@@ -30,7 +24,7 @@ which part of the analysis you want to run and specific parameters
    Change the location of the files appropriately
 
 Important
-=========
+----------
 
    .. rubric:: Sample names have to be in the first column or in a
       column called sampleID and **need to match** the column names of
