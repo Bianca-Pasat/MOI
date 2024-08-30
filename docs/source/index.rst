@@ -7,7 +7,7 @@ Additional to traditional RNAseq pipelines MOI has tools for functional annotati
 Moreover it can cover proteomics analysis and metabolomics analysis. For the latter, MOI has additional tools for accessing differences in 
 specific biochemical attributes. All available omics specific workflows can run autonomously, however if the user wishes they can integrate
 their data either with data driven or biology driven approaches. 
-Finally, differentiating from existing pipelines we offer biotranslator as our pathway enrichment algorithm as it can better mit9igate the 
+Finally, differentiating from existing pipelines we offer biotranslator as our pathway enrichment algorithm as it can better mitigate the 
 high noise inhereit with biological data
 
 
