@@ -18,7 +18,7 @@ examples below.
    CONTROL_REP1,AEG588A1_S1_L004_R1_001.fastq.gz,AEG588A1_S1_L004_R2_001.fastq.gz,control,3,0
 
 Important
-=========
+---------
 
    .. rubric:: Sample names have to be in the first column or in a
       column called sampleID.
