@@ -1,23 +1,3 @@
-ASAGlab/moi: Documentation
-==========================
-
-The ASAGlab/mom documentation is split into the following pages:
-
--  `Usage_genes.md <usage_genes.md>`__
--  `Usage_isoforms.md <usage_isoforms.md>`__
--  `Usage_mirna.md <usage_mirna.md>`__
--  `Usage_proteins.md <usage_proteins.md>`__
--  `Usage_lipids.md <usage_lipids.md>`__
--  `Usage_mcia.md <usage_mcia.md>`__
-
-   -  Detailed overviews of how the pipeline works, how to run it and a
-      description of all of the different command-line flags.
-
--  `Output <output.md>`__
-
-   -  An overview of the different results produced by the pipeline and
-      how to interpret them.
-
 General inputs and outputs
 ==========================
 
