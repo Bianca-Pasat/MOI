@@ -1,4 +1,4 @@
-Quick start - Instalaltion
+Quick start - Installation
 ==========================
 
 
