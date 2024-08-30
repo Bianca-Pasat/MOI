@@ -1,8 +1,8 @@
-multiomicsintegrator lipids usage
+Lipids
 =================================
 
 Introduction
-============
+------------
 
 .. raw:: html
 
@@ -25,7 +25,7 @@ sample.
    }
 
 Important
-=========
+---------
 
    .. rubric:: Sample names have to be in the first column or in a
       column called sampleID and **need to match** the column names of
