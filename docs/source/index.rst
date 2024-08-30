@@ -26,4 +26,9 @@ Contents
    installation
    genes
    isoforms
+   miRNA
+   proteins
+   lipids
+   integration
+   ----------
 
