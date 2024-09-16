@@ -10,7 +10,7 @@ The pipeline is built using [Nextflow](https://www.nextflow.io) version 23.04.2.
 
 ## Pipeline summary
 
-<!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->
+
 
 1. RNAseq analysis on the level of :
    - mRNAs 
