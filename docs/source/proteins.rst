@@ -6,11 +6,11 @@ Nessecary inputs
 ----------------
 
 The pipeline has as input the `count
-matrix <../assets/counts_proteins.txt>`__ with the abundance of proteins
-and a `phenotype file <../assets/samplesheet_proteins.csv>`__ describing
+matrix <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/assets/proteins.txt>`__ with the abundance of proteins
+and a `phenotype file <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/assets/samplesheet_proteins.csv>`__ describing
 the metadata of each sample. You have to modify one file, specifying
 which part of the analysis you want to run and specific parameters
-`params_proteins.yml <../params_proteins.yml>`__:
+`params_proteins.yml <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/params_proteins.yml>`__:
 
 .. code:: bash
 
@@ -60,15 +60,16 @@ directory:
    # Other nextflow hidden files, eg. history of pipeline runs and old logs.
 
 Functionality
-~~~~~~~~~~~~~
+ ============
 
-Initially, there is an optional module
-`preprocess_matrix <../subworkflows/local/preprocess_matrix.nf>`__ that
-preprocesses this matrix. Namely, the user can perform
-`filtering <../modules/local/mom_filter>`__,
-`normalization <../modules/local/mom_norm/>`__ and `batch
-effect <../modules/local/mom_filter/>`__ correction, depending on the
-state of their data.
+Preprocess 
+^^^^^^^^^^
+
+
+
+Initially, there is an optional module preprocess_matrix that preprocesses this matrix. 
+Namely, the user can perform filtering, normalization and batch effect correction, 
+depending on the state of their data.
 
    .. rubric:: Input_proteins should have a column named “condition”
       describing the states of the experiment (ctr vs treat) and one
@@ -93,29 +94,6 @@ state of their data.
 Once the count matrix is ready, we can move on to differential
 expression analysis. We provide three different algorithms for that:
 
-Preprocess
-~~~~~~~~~~
-
-After the formation of the count matrix there is an optional module
-`preprocess_matrix <../subworkflows/local/preprocess_matrix.nf>`__\ that
-preprocesses this matrix. Namely, the user can perform
-`filtering <../modules/local/mom_filter>`__,
-`normalization <../modules/local/mom_norm/>`__ and `batch
-effect <../modules/local/mom_filter/>`__ correction, depending on the
-state of their data.
-
-.. code:: bash
-
-
-   params{
-       mom_filt_method_proteins           = "filterByExp"  # filterByExp or choose a cutoff value
-       mom_norm_method_proteins           = "quantile"     # calncNorm quantile
-       mom_batch_method_proteins          = "com" # com for combat, sva,  comsva for combat & sva, svacom for sva and comba, none
-       mom_batch_batch_proteins           = "replicate"  
-   }
-
-Now,is time to perform differential expression analysis. We provide
-three different algorithms for that, which we describe below.
 
 Note
 ~~~~
@@ -130,9 +108,9 @@ Note
    }
 
 DEA
-~~~
+^^^
 
-edger `edger <../modules/local/edger>`__
+edger edger
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: bash
@@ -143,7 +121,7 @@ edger `edger <../modules/local/edger>`__
        edgercontrasts_proteins            = "TNBC-non_TNBC"  # contrasts of interest. Values have to be present in the samplesheet_proteins.csv
    }
 
-DESeq2 `deseq <../modules/local/deseq2>`__
+DESeq2 deseq
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Important note**
@@ -163,7 +141,7 @@ DESeq2 `deseq <../modules/local/deseq2>`__
        deseq2single_matrix             = true   # if the input is a single matrix or a directory of files
    }
 
-RankProduct `rankprod <../modules/local/rankprod>`__
+RankProduct rankprod
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Inputs for to run RankProduct are the same, with a single difference:
@@ -178,11 +156,10 @@ asign **0 to controls and 1 to treatments**
    TREATMENT_REP1,0
 
 Pathway Enrichment Analysis (PEA)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Last step of the analysis is to perform pathway enrichment analysis with
-`clusterprofiler <../modules/local/clusterprofiler>`__ or
-`biotranslator <../modules/local/biotranslator>`__
+clusterprofiler or biotranslator:
 
 .. code:: bash
 
@@ -196,7 +173,7 @@ Last step of the analysis is to perform pathway enrichment analysis with
    }
 
 BIOTRANSLATOR
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 .. code:: bash
 
