@@ -11,22 +11,21 @@ The pipeline is built using [Nextflow](https://www.nextflow.io) version 23.04.2.
 Pipeline summary
 -------------------
 
-.. toctree::
 
-
-   RNAseq analysis on the level of :
-   - mRNAs 
-   - miRNAs
-   - isoforms 
-   Functional annotation of transcripts
-   Metabolomics analysis
-   Proteomics analysis
-   Integration of multi omics data
+   - RNAseq analysis on the level of :
+      - mRNAs 
+      - miRNAs
+      - isoforms 
+   - Functional annotation of transcripts
+   - Metabolomics analysis
+   - Proteomics analysis
+   - Integration of multi omics data
    ----------
 
 
 Supplementary materials for this pipeline can be found at this zenodo repository:
----------------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
+
 https://zenodo.org/records/10813721
 
 
@@ -60,7 +59,9 @@ Quick Start
 
    See format in *params_mcia.yml* and change accordingly.
 
-   ### In addition check modify resources (in params_mcia.yml) according to your system:
+In addition check modify resources (in params_mcia.yml) according to your system:
+^^^^^^^^^^^^^^^^^^^^^^^
+
    - max_memory : '8.GB'
    - max_cpus   : 7
 
@@ -124,4 +125,4 @@ just run the pipeline again with -resume :
 Documentation
 -------------
 
-The ASAGlab/moi pipeline comes with documentation about the pipeline  under docs in various usage.md files as well as example yml files which the user can modify as guidance into custom modifications directly. Example outputs are also included under the docs folder in this repository `Link Text <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses>`_.
+The ASAGlab/moi pipeline comes with documentation about the pipeline  under docs in various usage.md files as well as example yml files which the user can modify as guidance into custom modifications directly. Example outputs are also included under the docs folder in this repository `ASAG/MOI <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses>`_.
