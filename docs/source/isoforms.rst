@@ -44,19 +44,19 @@ Important
 | m |                                                                   |
 | n |                                                                   |
 +===+===================================================================+
-| ` | Custom sample name. This entry will be identical for multiple     |
-| ` | sequencing libraries/runs from the same sample. Spaces in sample  |
+|   | Custom sample name. This entry will be identical for multiple     |
+|   | sequencing libraries/runs from the same sample. Spaces in sample  |
 | s | names are automatically converted to underscores (``_``).         |
 | a |                                                                   |
 | m |                                                                   |
 | p |                                                                   |
 | l |                                                                   |
 | e |                                                                   |
-| ` |                                                                   |
-| ` |                                                                   |
+|   |                                                                   |
+|   |                                                                   |
 +---+-------------------------------------------------------------------+
-| ` | Full path to FastQ file for Illumina short reads 1. File has to   |
-| ` | be gzipped and have the extension “.fastq.gz” or “.fq.gz”.        |
+|   | Full path to FastQ file for Illumina short reads 1. File has to   |
+|   | be gzipped and have the extension “.fastq.gz” or “.fq.gz”.        |
 | f |                                                                   |
 | a |                                                                   |
 | s |                                                                   |
@@ -64,11 +64,11 @@ Important
 | q |                                                                   |
 | _ |                                                                   |
 | 1 |                                                                   |
-| ` |                                                                   |
-| ` |                                                                   |
+|   |                                                                   |
+|   |                                                                   |
 +---+-------------------------------------------------------------------+
-| ` | Full path to FastQ file for Illumina short reads 2. File has to   |
-| ` | be gzipped and have the extension “.fastq.gz” or “.fq.gz”.        |
+|   | Full path to FastQ file for Illumina short reads 2. File has to   |
+|   | be gzipped and have the extension “.fastq.gz” or “.fq.gz”.        |
 | f |                                                                   |
 | a |                                                                   |
 | s |                                                                   |
@@ -76,11 +76,11 @@ Important
 | q |                                                                   |
 | _ |                                                                   |
 | 2 |                                                                   |
-| ` |                                                                   |
-| ` |                                                                   |
+|   |                                                                   |
+|   |                                                                   |
 +---+-------------------------------------------------------------------+
-| ` | Custom sample name. This entry will be identical for multiple     |
-| ` | sequencing libraries/runs from the same sample. Spaces in sample  |
+|   | Custom sample name. This entry will be identical for multiple     |
+|   | sequencing libraries/runs from the same sample. Spaces in sample  |
 | s | names are automatically converted to underscores (``_``).         |
 | t |                                                                   |
 | r |                                                                   |
@@ -91,11 +91,11 @@ Important
 | e |                                                                   |
 | s |                                                                   |
 | s |                                                                   |
-| ` |                                                                   |
-| ` |                                                                   |
+|   |                                                                   |
+|   |                                                                   |
 +---+-------------------------------------------------------------------+
-| ` | Metadata describing your test condition (or treatment, or state   |
-| ` | etc)                                                              |
+|   | Metadata describing your test condition (or treatment, or state   |
+|   | etc)                                                              |
 | c |                                                                   |
 | o |                                                                   |
 | n |                                                                   |
@@ -105,18 +105,18 @@ Important
 | i |                                                                   |
 | o |                                                                   |
 | n |                                                                   |
-| ` |                                                                   |
-| ` |                                                                   |
+|   |                                                                   |
+|   |                                                                   |
 +---+-------------------------------------------------------------------+
-| ` | Describes unwanted source of variation (e.g. technical            |
-| ` | replicates, different platfroms, different batches etc.).         |
+|   | Describes unwanted source of variation (e.g. technical            |
+|   | replicates, different platfroms, different batches etc.).         |
 | b |                                                                   |
 | a |                                                                   |
 | t |                                                                   |
 | c |                                                                   |
 | h |                                                                   |
-| ` |                                                                   |
-| ` |                                                                   |
+|   |                                                                   |
+|   |                                                                   |
 +---+-------------------------------------------------------------------+
 
 Start from SRA
@@ -134,7 +134,7 @@ be named sampleID and store the SRA **codes**:
    SRR2015760,SRX10229042,1
    SRR2015761,SRX10229053,1
 
-An `example samplesheet <../assets/samplesheet_isoforms.csv>`__ has been
+An `example samplesheet <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/assets/samplesheet_isoforms.csv>`__ has been
 provided with the pipeline.
 
 Refference files
@@ -155,7 +155,7 @@ Running the pipeline
 In order to run the isoform part of the pipeline you have to modify one
 file, specofying which part of the analysis you want to run and
 parameters associated with
-it:`params_isoforms.yml </../params_isoforms.yml>`__
+it: `params_isoforms.yml <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/params_isoforms.yml>`__
 
 .. code:: bash
 
@@ -211,8 +211,11 @@ perform quality control, you can specify in the isoforms.config file:
      skip_qc_isoforms= true
    }
 
-It then employs [salmon] in order to obtain quantification files with
-format relative-path/salmon_isoforms/sampleID/quant.sf.
+It then employs salmon in order to obtain quantification files with
+format 
+::
+
+OUTDIR/salmon_isoforms/sampleID/quant.sf.
 
 If you want to skip the alignement step you need to specify the location
 of those files in the respective field in the params_isoforms.yml file:
@@ -232,7 +235,7 @@ Note: All files need to be in the format:
    - sampleID/  
      - quant.sf
 
-After that [isoformSwitchAnalyzer] is used, which takes these
+After that isoformSwitchAnalyzer is used, which takes these
 quantification files and performs differential expression analysis on
 the level of both isoforms and genes. IsoformSwitchAnalyzer requires a
 samplesheet_isoforms.csv (phenotype file) with necessary columns
@@ -243,14 +246,14 @@ sampleID and condition. The design matrix is of the form :
    ~0 + condition
 
 Then diferentially expressed feaatures are collected and their sequences
-are annotated regarding their coding potential [CPAT], their homology
-with protein domains [Pfam] and the existense of any signaling sequence
-[signalP]. This is performed with subworkflow functional_annotation.nf
+are annotated regarding their coding potential CPAT, their homology
+with protein domains Pfam and the existense of any signaling sequence
+signalP. This is performed with subworkflow functional_annotation.nf
 
 Next step of the analysis is to asses functional implications of the
 differentially isoform/exon usage on the expression of the different
 genes and isoforms. We provide many insightful plots for this reason
-under the direcorty $outdir/isovisual. Moreover, we additionally provide
+under the direcorty OUTDIR/isovisual. Moreover, we additionally provide
 one output specifically focused on lncRNAs and a correlation matrix
 between differentially expressed lncRNAs and genes. Lastly, we provide
 the R object if the user wishes to inspect the results more thouroughly.
