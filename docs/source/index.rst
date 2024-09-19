@@ -1,7 +1,7 @@
 Welcome to MultiOmicsIntegrator documentation!
 =============================================
 
-**MOI** is a nextflow pipeline that aims to cover extensive and diverse omics analyses. `Link Text <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses>`_
+**MOI** is a nextflow pipeline that aims to cover extensive and diverse omics analyses. `MOI <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses>`_
 It offers end-to-end analysis of RNAseq, taking into account different RNA molecules, like isoforms of genes and miRNA. 
 Additional to traditional RNAseq pipelines MOI has tools for functional annotation and secondary structure prediction of transcripts. 
 Moreover it can cover proteomics analysis and metabolomics analysis. For the latter, MOI has additional tools for accessing differences in 
