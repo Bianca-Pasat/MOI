@@ -12,7 +12,7 @@ Pipeline summary
 -------------------
 
 
-   - RNAseq analysis on the level of :
+   - RNAseq analysis on the level of 
       - mRNAs 
       - miRNAs
       - isoforms 
