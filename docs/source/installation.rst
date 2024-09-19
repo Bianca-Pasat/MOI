@@ -8,25 +8,31 @@ Quick start - Installation
 The pipeline is built using [Nextflow](https://www.nextflow.io) version 23.04.2.5870 (IMPORTANT), a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. It uses Docker/Singularity containers making installation trivial and results highly reproducible. The [Nextflow DSL2](https://www.nextflow.io/docs/latest/dsl2.html) implementation of this pipeline uses one container per process which makes it much easier to maintain and update software dependencies. Where possible, these processes have been submitted to and installed from [nf-core/modules](https://github.com/nf-core/modules) in order to make them available to all nf-core pipelines, and to everyone within the Nextflow community!
 
 
-## Pipeline summary
+Pipeline summary
+-------------------
+
+.. toctree::
 
 
-
-1. RNAseq analysis on the level of :
+   RNAseq analysis on the level of :
    - mRNAs 
    - miRNAs
    - isoforms 
-2. Functional annotation of transcripts
-3. Metabolomics analysis
-4. Proteomics analysis
-5. Integration of multi omics data
+   Functional annotation of transcripts
+   Metabolomics analysis
+   Proteomics analysis
+   Integration of multi omics data
+   ----------
 
-## Supplementary materials for this pipeline can be found at this zenodo repository:
+
+Supplementary materials for this pipeline can be found at this zenodo repository:
+---------------------------------------------------------------------------------
 https://zenodo.org/records/10813721
 
 
 
-## Quick Start
+Quick Start
+-----------
 
 1. Install [`Nextflow`](https://www.nextflow.io/docs/latest/getstarted.html#installation) (`>=22.10.1`)
 
@@ -82,7 +88,8 @@ https://zenodo.org/records/10813721
    - params_ridderalone
 
 
-## Common issues:
+Common issues:
+-----------------
    - If an error regarding biomaRt appears:
      
     ```bash
@@ -114,6 +121,7 @@ just run the pipeline again with -resume :
 
 
 
-## Documentation
+Documentation
+-------------
 
-The ASAGlab/moi pipeline comes with documentation about the pipeline  under docs in various usage.md files as well as example yml files which the user can modify as guidance into custom modifications directly. Example outputs are also included under the docs folder in this repository.
+The ASAGlab/moi pipeline comes with documentation about the pipeline  under docs in various usage.md files as well as example yml files which the user can modify as guidance into custom modifications directly. Example outputs are also included under the docs folder in this repository `Link Text <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses>`_.
