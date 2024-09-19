@@ -44,19 +44,19 @@ Important
 | m |                                                                   |
 | n |                                                                   |
 +===+===================================================================+
-| ` | Custom sample name. This entry will be identical for multiple     |
-| ` | sequencing libraries/runs from the same sample. Spaces in sample  |
+|   | Custom sample name. This entry will be identical for multiple     |
+|   | sequencing libraries/runs from the same sample. Spaces in sample  |
 | s | names are automatically converted to underscores (``_``).         |
 | a |                                                                   |
 | m |                                                                   |
 | p |                                                                   |
 | l |                                                                   |
 | e |                                                                   |
-| ` |                                                                   |
-| ` |                                                                   |
+|   |                                                                   |
+|   |                                                                   |
 +---+-------------------------------------------------------------------+
-| ` | Full path to FastQ file for Illumina short reads 1. File has to   |
-| ` | be gzipped and have the extension “.fastq.gz” or “.fq.gz”.        |
+|   | Full path to FastQ file for Illumina short reads 1. File has to   |
+|   | be gzipped and have the extension “.fastq.gz” or “.fq.gz”.        |
 | f |                                                                   |
 | a |                                                                   |
 | s |                                                                   |
@@ -64,11 +64,11 @@ Important
 | q |                                                                   |
 | _ |                                                                   |
 | 1 |                                                                   |
-| ` |                                                                   |
-| ` |                                                                   |
+|   |                                                                   |
+|   |                                                                   |
 +---+-------------------------------------------------------------------+
-| ` | Full path to FastQ file for Illumina short reads 2. File has to   |
-| ` | be gzipped and have the extension “.fastq.gz” or “.fq.gz”.        |
+|   | Full path to FastQ file for Illumina short reads 2. File has to   |
+|   | be gzipped and have the extension “.fastq.gz” or “.fq.gz”.        |
 | f |                                                                   |
 | a |                                                                   |
 | s |                                                                   |
@@ -76,11 +76,11 @@ Important
 | q |                                                                   |
 | _ |                                                                   |
 | 2 |                                                                   |
-| ` |                                                                   |
-| ` |                                                                   |
+|   |                                                                   |
+|   |                                                                   |
 +---+-------------------------------------------------------------------+
-| ` | Custom sample name. This entry will be identical for multiple     |
-| ` | sequencing libraries/runs from the same sample. Spaces in sample  |
+|   | Custom sample name. This entry will be identical for multiple     |
+|   | sequencing libraries/runs from the same sample. Spaces in sample  |
 | s | names are automatically converted to underscores (``_``).         |
 | t |                                                                   |
 | r |                                                                   |
@@ -91,11 +91,11 @@ Important
 | e |                                                                   |
 | s |                                                                   |
 | s |                                                                   |
-| ` |                                                                   |
-| ` |                                                                   |
+|   |                                                                   |
+|   |                                                                   |
 +---+-------------------------------------------------------------------+
-| ` | Metadata describing your test condition (or treatment, or state   |
-| ` | etc)                                                              |
+|   | Metadata describing your test condition (or treatment, or state   |
+|   | etc)                                                              |
 | c |                                                                   |
 | o |                                                                   |
 | n |                                                                   |
@@ -105,18 +105,18 @@ Important
 | i |                                                                   |
 | o |                                                                   |
 | n |                                                                   |
-| ` |                                                                   |
-| ` |                                                                   |
+|   |                                                                   |
+|   |                                                                   |
 +---+-------------------------------------------------------------------+
-| ` | Describes unwanted source of variation (e.g. technical            |
-| ` | replicates, different platfroms, different batches etc.).         |
+|   | Describes unwanted source of variation (e.g. technical            |
+|   | replicates, different platfroms, different batches etc.).         |
 | b |                                                                   |
 | a |                                                                   |
 | t |                                                                   |
 | c |                                                                   |
 | h |                                                                   |
-| ` |                                                                   |
-| ` |                                                                   |
+|   |                                                                   |
+|   |                                                                   |
 +---+-------------------------------------------------------------------+
 
 Start from SRA
@@ -134,7 +134,7 @@ be named sampleID and store the SRA **codes**:
    SRR2015760,SRX1022904,control,2,1
    SRR2015761,SRX1022905,control,3,1
 
-An `example samplesheet <../assets/samplesheet_genes.csv>`__ has been
+An `example samplesheet <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/assets/samplesheet_genes.csv>`__ has been
 provided with the pipeline.
 
 Refference files
@@ -164,7 +164,7 @@ Running the pipeline
 
 In order to run the genes part of the pipeline you have to modify one
 file, specifying which part of the analysis you want to run and specific
-parameters `params_genes.yml <../params_genes.yml>`__:
+parameters `params_genes.yml <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/params_genes.yml>`__:
 
 .. code:: bash
 
@@ -208,9 +208,9 @@ Functionality
 
 The pipeline initially downloads SRA codes and converts the runs into
 fastq files. Alternativey you can provide local fastq files. It then
-performs quality control with `FASTQC`__ and
+performs quality control with FASTQC and
 then automatically detects and removes adapters with
-`Trimgalore`__.
+Trimgalore.
 
 Each of the above steps can be skipped, for example if you don’t want to
 perform quality control, you can specify in the params_genes.yml file:
@@ -223,7 +223,11 @@ perform quality control, you can specify in the params_genes.yml file:
 
 It then employs `salmon`__ in order to
 obtain quantification files that are outputed in
-:math:`OUTDIR/salmon_genes/`\ sampleID/quant.sf directory.
+::
+
+/OUTDIR/salmon_genes/sampleID/quant.sf 
+
+directory.
 
 If you have performed the alignment step outside you can organise your
 data in the aforementioned way and specify the directory that holds the
@@ -261,13 +265,10 @@ you have, in the params_genes.yml file:
 Preprocess
 ----------
 
-After the formation of the count matrix there is an optional module
-`preprocess_matrix <../subworkflows/local/preprocess_matrix.nf>`__ that
-performs preprocessing steps on the count matrix. Namely, the user can
-perform `filtering`__,
-`normalization`__ and `batch
-effect`__ correction, depending on the
-state of their data.
+After the formation of the count matrix there is an optional module 
+preprocess_matrix that performs preprocessing steps on the count matrix. 
+Namely, the user can perform filtering, normalization and batch effect correction, 
+depending on the state of their data.
 
    .. rubric:: Input_genes should have a column named condition
       describing the states of the experiment (ctr vs treat) and one
@@ -309,7 +310,7 @@ Note
      alg_genes     = 'edger' # Default
    }
 
-edger `edger`__
+edger
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: bash
@@ -320,7 +321,7 @@ edger `edger`__
        edgercontrasts_genes            = "TNBC-non_TNBC"  # contrasts of interest. Values have to be present in the samplesheet_genes.csv
    }
 
-DESeq2 `deseq`__
+DESeq2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Important note**
@@ -340,7 +341,7 @@ DESeq2 `deseq`__
        deseq2single_matrix             = true   # if the input is a single matrix or a directory of files
    }
 
-RankProduct `rankprod`__
+RankProduct rankprod
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Inputs for to run RankProduct are the same, with a single difference:
@@ -367,8 +368,8 @@ PEA
 ---
 
 Last step of the analysis is to perform pathway enrichment analysis with
-`clusterprofiler`__ or biotranslator
-`biotranslator`__.
+clusterprofiler or biotranslator.
+
 
 .. code:: bash
 
