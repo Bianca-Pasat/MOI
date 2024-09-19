@@ -5,9 +5,9 @@ Lipids
 Nessecary inputs
 ----------------
 
-The pipeline has as input the `count matrix <../assets/lipids.txt>`__
+The pipeline has as input the `count matrix <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/assets/lipids.txt>`__
 with the abundance of lipids and a `phenotype
-file </assets/samplesheet_lipids.csv>`__ describing the metadata of each
+file <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/assets/samplesheet_lipids.csv>`__ describing the metadata of each
 sample.
 
 .. code:: bash
@@ -36,7 +36,7 @@ Running the pipeline
 
 In order to run the lipids part of the pipeline you have to modify one
 file, specifying which part of the analysis you want to run and
-respective parameters `params_lipids.yml <../params_lipids.yml>`__:
+respective parameters `params_lipids.yml <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/params_lipids.yml>`__:
 
 .. code:: bash
 
@@ -68,10 +68,10 @@ directory:
    # Other nextflow hidden files, eg. history of pipeline runs and old logs.
 
 Functionality
-~~~~~~~~~~~~~
+==============
 
 All in one analysis with LipidR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We provide the possibility to perform the proprocessing steps, as well
 as the the differential expression analysis using the R Bioconductor
@@ -89,23 +89,21 @@ conditions.
       :name: you-need-to-have-either-the-first-or-one-column-named-sampleid-and-the-column-that-stores-the-different-settings-of-your-experiment-has-be-named-condition-in-your-samplesheet_lipids.csv-file.
 
 LipiDB
-~~~~~~
+^^^^^^
 
 LipidR will produce differentially expressed features for each category
 of lipids. Subsequently, LipiDB, using KREGGREST will find genes
 associated to these differentially expressed lipids, for each category.
-The results are in as form of a text file and a heatmap.
+Input is the result of lipidR or in other words a txt file that has eregulated lipids along with their logFC and pval. The results are in as form of a text file and a heatmap.
 
 PEA
-~~~
+^^^^
 
 Last step of the analysis is to perform pathway enrichment analysis with
-`metabAnalystR <../modules/local/metaboanalystr>`__ or with
-`biotranslator <../modules/local/metaboanalystr>`__
-(../modules/local/biotranslator)
+metabAnalystR or with biotranslator
 
 BIOTRANSLATOR
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 .. code:: bash
 
