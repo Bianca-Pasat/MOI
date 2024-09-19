@@ -63,7 +63,7 @@ Quick Start
 
    See format in *params_mcia.yml* and change accordingly.
 
-In addition check modify resources (in params_mcia.yml) according to your system:
+In addition check/modify resources (in params_mcia.yml) according to your system:
 ^^^^^^^^^^^^^^^^^^^^^^^
 
    - max_memory : '8.GB'
