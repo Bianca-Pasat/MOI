@@ -1,4 +1,4 @@
-Quick start - Installation
+Installation
 ==========================
 
 
@@ -22,6 +22,10 @@ Pipeline summary
    - Integration of multi omics data
    ----------
 
+The pipeline can be found at:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses
 
 Supplementary materials for this pipeline can be found at this zenodo repository:
 ^^^^^^^^^^^^^^^^^^^^^^^
