@@ -68,7 +68,7 @@ directory:
    # Other nextflow hidden files, eg. history of pipeline runs and old logs.
 
 Functionality
-==============
+-------------
 
 All in one analysis with LipidR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
