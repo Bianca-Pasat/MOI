@@ -110,7 +110,7 @@ Note
 DEA
 ^^^
 
-edger edger
+edger
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: bash
@@ -121,7 +121,7 @@ edger edger
        edgercontrasts_proteins            = "TNBC-non_TNBC"  # contrasts of interest. Values have to be present in the samplesheet_proteins.csv
    }
 
-DESeq2 deseq
+DESeq2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Important note**
@@ -141,7 +141,7 @@ DESeq2 deseq
        deseq2single_matrix             = true   # if the input is a single matrix or a directory of files
    }
 
-RankProduct rankprod
+RankProduct
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Inputs for to run RankProduct are the same, with a single difference:
