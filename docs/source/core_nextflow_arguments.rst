@@ -1,5 +1,5 @@
 Core Nextflow arguments
------------------------
+========================
 
    **NB:** These options are part of Nextflow and use a *single* hyphen
    (pipeline parameters use a double-hyphen).
