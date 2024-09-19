@@ -30,5 +30,6 @@ Contents
    proteins
    lipids
    integration
+   general
    ----------
 
