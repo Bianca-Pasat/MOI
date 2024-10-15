@@ -158,7 +158,7 @@ We suggest to use the count matrices of the differentially expressed features.
    }
 
 Additionally, we offer a
-comparative_analysis tool,which estimates the semantic distance 
+**comparative_analysis** tool,which estimates the semantic distance 
 (e.g. the similarity of their pathways) of two features signatures. 
 Input is a txt file, with each column storing one distinct feature signature. 
 Available parameters are:
@@ -166,8 +166,8 @@ Available parameters are:
 .. code:: bash
 
    params{
-       comparative_alone = false
-       biocomp_input             = "${projectDir}/assets/ensembl_9.txt" // Input
+       comparative_alone = [logcal, if you want to run it as a standalone module, default : false]
+       biocomp_input             = ['Input']
        biocomp_organism          = "hsapiens"   // Organism
        biocomp_keytype          = "gene_symbol" // Type of keys. Available gene_symbol, ensembl, ncbi
        biocomp_ontology         = "GO" // Ontologies MGIMP, Reactome
@@ -187,3 +187,71 @@ or
 
    nextflow run multiomicsintegrator/modules/local/comparative_analysis/main.nf -c multiomicsintegrator/nextflow.config -profile docker
 
+
+## OmnipathR
+OmnipathR is a knowledge database that stores multiple levels of Biological Information. In MOI omnipathr can run as part of the pipeline or as a standalone tool. As part of the pipeline it takes the hub genes and forms a network out of protein protein interactions. Moreover, it can annotate the hub features based on the role of the feature (e.g., ligand, transcription factor etc.) in the signaling pathway they reside in. By leveraging this information it can then reconstruct the pathways that exist in the network, an aspect crucial in signaling specific contexts. 
+
+Detailed information on how to run the tool is listed below: 
+
+```bash
+
+params{
+  omnipath_biotrans = '[ directory that has the outputs of biotranslator, should be relative to outdir]' 
+  omnipath_choose   = '[choose_omics, choose_role]'
+  omnipath_choose_type = '[logical, do you want additional annotation]'
+  omnipath_additional_info_bool = '[Logical, whether you want additional annotation]'
+   omnipath_additional_info_val = '[Must be present in get_omnipath_resources(), for example "SignaLink pathway"]'
+  omnipath_additional_info_attribute = '[Must be a get_omnipath_resources(omnipath_annot), for example "TGF" (omnipath_annot is declared above)]'
+}
+
+``` 
+If the user want to run the tool as a standalone module for a single omics they need one extra argument:
+
+```bash
+
+params{
+  omnipath_alone = '[logical, T]'
+}
+
+``` 
+The command to run the tool as a standalone module is
+```bash
+nextflow run multiomicsintegrator/modules/local/omnipath/main.nf -c multiomicsintegrator/nextflow.config -profile docker
+```
+
+Moreover, if the user has multiple omics and wants to integrate them after the step of differential expression rather than after pathway enrichment analysis they need to supply an additional file with columns Gene (gene symbol) and Category (omics type). 
+This file is automatically produced by MOI and is called genes_across_omics.txt
+
+
+```bash
+
+params{
+  omnipath_biotrans = '[ directory that has the outputs of biotranslator, should be relative to outdir]' 
+  omnipath_integrated_gao = '[ path of file genes_across_omics ]' 
+  omnipath_choose   = '[choose_omics, choose_role]'
+  omnipath_choose_type = '[logical, do you want additional annotation]'
+  omnipath_additional_info_bool = '[Logical, whether you want additional annotation]'
+   omnipath_additional_info_val = '[Must be present in get_omnipath_resources(), for example "SignaLink pathway"]'
+  omnipath_additional_info_attribute = '[Must be a get_omnipath_resources(omnipath_annot), for example "TGF" (omnipath_annot is declared above)]'
+}
+    
+``` 
+If the user want to run the tool as a standalone module for a single omics they need one extra argument:
+
+```bash
+
+params{
+  omnipath_integrated_alone = '[logical, T]'
+}
+
+```
+
+The command to run it as a standalone module is:
+```bash
+   nextflow run multiomicsintegrator/modules/local/omnipath_integrated/main.nf -c multiomicsintegrator/nextflow.config -profile docker
+```
+# Additional omics types
+
+MOI can be extended to other omics types as well. Is supplied with abundance matrices (for example glycomics) MOI can integrate it with MCIA, after performing basic filtering and normalization steps. 
+If translated into the gene level, MOI can integrate them with the exploratory analysis tool, multiMiR, lipidDB as explained above. In addition, if translated to the gene level additional omics types can be integrated with high-level approaches like biotranslator, comparative analysis tool or omnipathr. 
+The user will treat these data as they were gene data.  
