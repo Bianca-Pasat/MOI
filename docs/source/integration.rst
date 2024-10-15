@@ -193,7 +193,7 @@ OmnipathR is a knowledge database that stores multiple levels of Biological Info
 
 Detailed information on how to run the tool is listed below: 
 
-```bash
+..code::bash
 
 params{
   omnipath_biotrans = '[ directory that has the outputs of biotranslator, should be relative to outdir]' 
@@ -204,26 +204,30 @@ params{
   omnipath_additional_info_attribute = '[Must be a get_omnipath_resources(omnipath_annot), for example "TGF" (omnipath_annot is declared above)]'
 }
 
-``` 
+
+
 If the user want to run the tool as a standalone module for a single omics they need one extra argument:
 
-```bash
+
+..code::bash
 
 params{
   omnipath_alone = '[logical, T]'
 }
 
-``` 
+
+
 The command to run the tool as a standalone module is
-```bash
+
+..code::bash
 nextflow run multiomicsintegrator/modules/local/omnipath/main.nf -c multiomicsintegrator/nextflow.config -profile docker
-```
+
 
 Moreover, if the user has multiple omics and wants to integrate them after the step of differential expression rather than after pathway enrichment analysis they need to supply an additional file with columns Gene (gene symbol) and Category (omics type). 
 This file is automatically produced by MOI and is called genes_across_omics.txt
 
 
-```bash
+..code::bash
 
 params{
   omnipath_biotrans = '[ directory that has the outputs of biotranslator, should be relative to outdir]' 
@@ -235,21 +239,24 @@ params{
   omnipath_additional_info_attribute = '[Must be a get_omnipath_resources(omnipath_annot), for example "TGF" (omnipath_annot is declared above)]'
 }
     
-``` 
-If the user want to run the tool as a standalone module for a single omics they need one extra argument:
 
-```bash
+If the user wants to run the tool as a standalone module for a single omics they need one extra argument:
+
+..code::bash
 
 params{
   omnipath_integrated_alone = '[logical, T]'
 }
 
-```
+
 
 The command to run it as a standalone module is:
-```bash
-   nextflow run multiomicsintegrator/modules/local/omnipath_integrated/main.nf -c multiomicsintegrator/nextflow.config -profile docker
-```
+
+..code::bash
+   
+nextflow run multiomicsintegrator/modules/local/omnipath_integrated/main.nf -c multiomicsintegrator/nextflow.config -profile docker
+
+
 # Additional omics types
 
 MOI can be extended to other omics types as well. Is supplied with abundance matrices (for example glycomics) MOI can integrate it with MCIA, after performing basic filtering and normalization steps. 
