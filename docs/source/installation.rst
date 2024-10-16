@@ -43,10 +43,10 @@ Quick Start
 
 3. Download the pipeline and rename it:
 
-   ```bash
+ .. code:: bash
    git clone https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses.git
    mv MOI--An-integrated-solution-for-omics-analyses multiomicsintegrator 
-   ```
+ 
 
 4. Modify in the params_mcia.yml file the following parameters regarding the location you want your outputs
 
@@ -56,10 +56,10 @@ Quick Start
 
    Paths of pathmcia and biotrans_all_path should be complete and follow this format: 
 
-   ```
+  .. code:: bash
       $outdir/mcia
       $outdir/prepareforbio
-   ```
+ 
 
    See format in *params_mcia.yml* and change accordingly.
 
@@ -72,9 +72,9 @@ In addition check/modify resources (in params_mcia.yml) according to your system
 
 5. Run the pipeline by providing the full path to params-file argument 
 
-   ```bash
+ .. code:: bash
    NXF_VER=23.04.2 nextflow run multiomicsintegrator -params-file /full/path/to/params_mcia.yml -profile docker 
-   ```
+ 
 
    Note that some form of configuration will be needed so that Nextflow knows how to fetch the required software. This is usually done in the form of a config profile (`YOURPROFILE` in the example command above). You can chain multiple config profiles in a comma-separated string.
 
@@ -97,29 +97,31 @@ Common issues:
 -----------------
    - If an error regarding biomaRt appears:
      
-    ```bash
+  .. code:: bash
+
      Error in h(simpleError(msg, call)) : 
      error in evaluating the argument 'conn' in selecting a method for function 'dbDisconnect': object 'info' not found
      Calls: useEnsembl ... .sql_disconnect -> dbDisconnect -> .handleSimpleError -> h
      Execution halted
-    ```
+  
    or 
    
-   ```
+ 
      Ensembl site unresponsive, trying useast mirror
   Ensembl site unresponsive, trying asia mirror
   Error in .chooseEnsemblMirror(mirror = mirror, http_config = http_config) : 
     Unable to query any Ensembl site
   Calls: useEnsembl -> .chooseEnsemblMirror
   Execution halted
-   ```
+ 
 
 just run the pipeline again with -resume :
 
 
-   ```bash
+ .. code:: bash
+
    nextflow run multiomicsintegrator -params-file /full/path/to/params_mcia.yml -profile docker -resume
-   ```
+ 
    - If the error persists try delete container of bianca7/mompreprocess (or all containers if possible) and run again 
    - Comparative analysis, isoform analysis and mcia need substantial resources (at least 7 cpus).
    - Check resources and your directories!
