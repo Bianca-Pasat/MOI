@@ -11,7 +11,7 @@ The method we currently provide is MCIA (Multiple Co-Inertia Analysis).
 
 You can either run MCIA with your own data or choose this module as an
 additional step on your analyses. Check
-`params_mcia.yml <../params_mcia.yml>`__.
+`params_mcia.yml <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/params_mcia.yml>`__.
 
 You need to provide the path in (pathmcia variable) in which you store
 the different omics data and a samples info file describing the metadata
@@ -73,6 +73,8 @@ Important
    .. rubric:: If you have column names other than **condition** you
       need to change declare the names in the params_mcia.yml.
       :name: if-you-have-column-names-other-than-condition-you-need-to-change-declare-the-names-in-the-params_mcia.yml.
+
+   .. rubric:: Sample names have to be identical between different omics types!
 
 Running the pipeline
 --------------------
