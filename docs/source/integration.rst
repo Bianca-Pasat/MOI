@@ -63,7 +63,7 @@ Additionally, you need to change parameters in
    Change the location of the files appropriately
 
 Important
----------
+~~~~~~~~~
 
    .. rubric:: Sample names have to be in the first column or in a
       column called sampleID and **need to match** the column names of
@@ -188,12 +188,13 @@ or
    nextflow run multiomicsintegrator/modules/local/comparative_analysis/main.nf -c multiomicsintegrator/nextflow.config -profile docker
 
 
-## OmnipathR
+OmnipathR
+~~~~~~~~~~~~
 OmnipathR is a knowledge database that stores multiple levels of Biological Information. In MOI omnipathr can run as part of the pipeline or as a standalone tool. As part of the pipeline it takes the hub genes and forms a network out of protein protein interactions. Moreover, it can annotate the hub features based on the role of the feature (e.g., ligand, transcription factor etc.) in the signaling pathway they reside in. By leveraging this information it can then reconstruct the pathways that exist in the network, an aspect crucial in signaling specific contexts. 
 
 Detailed information on how to run the tool is listed below: 
 
-..code::bash
+.. code ::bash
 
 params{
   omnipath_biotrans = '[ directory that has the outputs of biotranslator, should be relative to outdir]' 
@@ -209,7 +210,7 @@ params{
 If the user want to run the tool as a standalone module for a single omics they need one extra argument:
 
 
-..code::bash
+.. code ::bash
 
 params{
   omnipath_alone = '[logical, T]'
@@ -219,7 +220,7 @@ params{
 
 The command to run the tool as a standalone module is
 
-..code::bash
+.. code ::bash
 nextflow run multiomicsintegrator/modules/local/omnipath/main.nf -c multiomicsintegrator/nextflow.config -profile docker
 
 
@@ -227,7 +228,7 @@ Moreover, if the user has multiple omics and wants to integrate them after the s
 This file is automatically produced by MOI and is called genes_across_omics.txt
 
 
-..code::bash
+.. code ::bash
 
 params{
   omnipath_biotrans = '[ directory that has the outputs of biotranslator, should be relative to outdir]' 
@@ -242,7 +243,7 @@ params{
 
 If the user wants to run the tool as a standalone module for a single omics they need one extra argument:
 
-..code::bash
+.. code ::bash
 
 params{
   omnipath_integrated_alone = '[logical, T]'
@@ -252,12 +253,13 @@ params{
 
 The command to run it as a standalone module is:
 
-..code::bash
+.. code::bash
    
 nextflow run multiomicsintegrator/modules/local/omnipath_integrated/main.nf -c multiomicsintegrator/nextflow.config -profile docker
 
 
-# Additional omics types
+Additional omics types
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 MOI can be extended to other omics types as well. Is supplied with abundance matrices (for example glycomics) MOI can integrate it with MCIA, after performing basic filtering and normalization steps. 
 If translated into the gene level, MOI can integrate them with the exploratory analysis tool, multiMiR, lipidDB as explained above. In addition, if translated to the gene level additional omics types can be integrated with high-level approaches like biotranslator, comparative analysis tool or omnipathr. 
