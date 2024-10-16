@@ -35,7 +35,7 @@ of each sample.
 Alternatively, if you mcia is used as with pipeline-generated data you
 should declare these variables as follows:
 
-``` bash
+.. code:: bash
 
    params{
      outdir: '/home/bianca/testresultsintegration' ### If outdir =  results then pathmcia should: /complete/path/to/results/mcia/ biotransl_all_path:path/to/results/prepareforbio
@@ -46,7 +46,7 @@ should declare these variables as follows:
 Additionally, you need to change parameters in
 `params_mcia.yml <../params_mcia.yml>`__ appropriately:
 
-``` bash
+.. code:: bash
 
 
    params{
@@ -81,7 +81,7 @@ Running the pipeline
 
 The general command to run the pipeline is:
 
-``` bash
+.. code:: bash
 
    nextflow run multiomicsintegrator -params-file multiomicsintegrator/params_mcia.yml -profile docker 
 
@@ -91,7 +91,7 @@ See below for more information about profiles.
 Note that the pipeline will create the following files in your working
 directory:
 
-``` bash
+.. code:: bash
 
    work                'Directory containing the nextflow working files'
    <OUTDIR>            ' Location of where you want your results (defined by outdir)' 
@@ -147,7 +147,7 @@ Correlation analysis
 to estimate correlation between differentially expressed features. 
 We suggest to use the count matrices of the differentially expressed features.
 
-``` bash
+.. code:: bash
 
    params{
        correlation_alone          = false
@@ -158,7 +158,7 @@ We suggest to use the count matrices of the differentially expressed features.
        cor_pvalc                  = 0.1 // pval cutoff of correlation
        
    }
-```
+
 
 Additionally, we offer a
 **comparative_analysis** tool,which estimates the semantic distance 
@@ -166,7 +166,7 @@ Additionally, we offer a
 Input is a txt file, with each column storing one distinct feature signature. 
 Available parameters are:
 
-``` bash
+.. code:: bash
 
    params{
        comparative_alone = [logcal, if you want to run it as a standalone module, default : false]
@@ -175,25 +175,25 @@ Available parameters are:
        biocomp_keytype          = "gene_symbol" // Type of keys. Available gene_symbol, ensembl, ncbi
        biocomp_ontology         = "GO" // Ontologies MGIMP, Reactome
    }
-```
+
 
 If the user wishes to run correlation or comparative_analysis as
 standalone modules they need to modify the nextflow.config file and run
 the command:
 
-``` bash
+.. code:: bash
 
    nextflow run multiomicsintegrator/modules/local/correlation/main.nf -c multiomicsintegrator/nextflow.config -profile docker
-```
+
 
 or
 
 
-``` bash
+.. code:: bash
 
    nextflow run multiomicsintegrator/modules/local/comparative_analysis/main.nf -c multiomicsintegrator/nextflow.config -profile docker
 
-```
+
 
 OmnipathR
 ~~~~~~~~~~~~
@@ -201,7 +201,7 @@ OmnipathR is a knowledge database that stores multiple levels of Biological Info
 
 Detailed information on how to run the tool is listed below: 
 
-``` bash
+.. code:: bash
 
     params {
         omnipath_biotrans = '[directory containing the outputs of biotranslator, relative to outdir]' 
@@ -217,7 +217,7 @@ Detailed information on how to run the tool is listed below:
 
 If the user want to run the tool as a standalone module for a single omics they need one extra argument:
 
-.. code:: console
+.. code:: bash
 
    params{
      omnipath_alone = '[logical, T]'
@@ -227,7 +227,7 @@ If the user want to run the tool as a standalone module for a single omics they 
 
 The command to run the tool as a standalone module is
 
-``` bash
+.. code:: bash
 
    nextflow run multiomicsintegrator/modules/local/omnipath/main.nf -c multiomicsintegrator/nextflow.config -profile docker
 
@@ -236,7 +236,7 @@ Moreover, if the user has multiple omics and wants to integrate them after the s
 This file is automatically produced by MOI and is called genes_across_omics.txt
 
 
-``` bash
+.. code:: bash
 
    params{
      omnipath_biotrans = '[ directory that has the outputs of biotranslator, should be relative to outdir]' 
@@ -251,7 +251,7 @@ This file is automatically produced by MOI and is called genes_across_omics.txt
 
 If the user wants to run the tool as a standalone module for a single omics they need one extra argument:
 
-``` bash
+.. code:: bash
 
    params{
      omnipath_integrated_alone = '[logical, T]'
@@ -261,7 +261,7 @@ If the user wants to run the tool as a standalone module for a single omics they
 
 The command to run it as a standalone module is:
 
-``` bash
+.. code:: bash
 
    nextflow run multiomicsintegrator/modules/local/omnipath_integrated/main.nf -c multiomicsintegrator/nextflow.config -profile docker
 
