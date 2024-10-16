@@ -194,23 +194,23 @@ OmnipathR is a knowledge database that stores multiple levels of Biological Info
 
 Detailed information on how to run the tool is listed below: 
 
-.. code ::bash
+.. code:: bash
 
-params{
-  omnipath_biotrans = '[ directory that has the outputs of biotranslator, should be relative to outdir]' 
-  omnipath_choose   = '[choose_omics, choose_role]'
-  omnipath_choose_type = '[logical, do you want additional annotation]'
-  omnipath_additional_info_bool = '[Logical, whether you want additional annotation]'
-   omnipath_additional_info_val = '[Must be present in get_omnipath_resources(), for example "SignaLink pathway"]'
-  omnipath_additional_info_attribute = '[Must be a get_omnipath_resources(omnipath_annot), for example "TGF" (omnipath_annot is declared above)]'
-}
+    params {
+        omnipath_biotrans = '[directory containing the outputs of biotranslator, relative to outdir]' 
+        omnipath_choose = '[choose_omics, choose_role]'
+        omnipath_choose_type = '[logical, specify if additional annotation is desired]'
+        omnipath_additional_info_bool = '[Logical, whether you want additional annotation]'
+        omnipath_additional_info_val = '[Must be present in get_omnipath_resources(), e.g., "SignaLink pathway"]'
+        omnipath_additional_info_attribute = '[Must be in get_omnipath_resources(omnipath_annot), e.g., "TGF" (omnipath_annot is declared above)]'
+    }
+
 
 
 
 If the user want to run the tool as a standalone module for a single omics they need one extra argument:
 
-
-.. code ::bash
+.. code:: bash
 
 params{
   omnipath_alone = '[logical, T]'
@@ -220,7 +220,8 @@ params{
 
 The command to run the tool as a standalone module is
 
-.. code ::bash
+.. code:: bash
+
 nextflow run multiomicsintegrator/modules/local/omnipath/main.nf -c multiomicsintegrator/nextflow.config -profile docker
 
 
@@ -228,7 +229,7 @@ Moreover, if the user has multiple omics and wants to integrate them after the s
 This file is automatically produced by MOI and is called genes_across_omics.txt
 
 
-.. code ::bash
+.. code:: bash
 
 params{
   omnipath_biotrans = '[ directory that has the outputs of biotranslator, should be relative to outdir]' 
@@ -243,7 +244,7 @@ params{
 
 If the user wants to run the tool as a standalone module for a single omics they need one extra argument:
 
-.. code ::bash
+.. code:: bash
 
 params{
   omnipath_integrated_alone = '[logical, T]'
@@ -253,8 +254,8 @@ params{
 
 The command to run it as a standalone module is:
 
-.. code::bash
-   
+.. code:: bash
+
 nextflow run multiomicsintegrator/modules/local/omnipath_integrated/main.nf -c multiomicsintegrator/nextflow.config -profile docker
 
 
