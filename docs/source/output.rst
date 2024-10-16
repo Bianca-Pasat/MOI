@@ -31,7 +31,9 @@ performs the following steps:
 4. Proteomics analysis
 5. Integration of multi omics data
 
-See diagram: `diagram.png </png/Fig.1.png>`__
+See diagram: 
+.. image:: png/Fig.1.png
+  :width: 600
 
 RNAseq analysis
 ---------------
@@ -40,10 +42,13 @@ Plots included here are generated from RNAseq data however similar plots
 can be generated for proteomic data if provided with a count matrix and
 a samples info file:
 
-`RNAseq analysis </png/Fig.3.png>`__ Box plots of samples
-after filtering and normalizations steps (A) as well as PCA plots of raw
-and cleaned for batch effect samples (B) provide quality control of the
-data. Heatmaps (C) and Volcano plots (D) offer visual indications of
+.. image:: png/Fig.3.png
+  :width: 600
+
+RNAseq analysis Box plots of samples after filtering and normalizations steps (A) 
+as well as PCA plots of raw and cleaned for batch effect samples (B) 
+provide quality control of the data. 
+Heatmaps (C) and Volcano plots (D) offer visual indications of
 differentially expressed features.
 
 .. raw:: html
@@ -77,7 +82,11 @@ Output files
 Isoform analysis
 ----------------
 
-`Isoform analysis </png/Fig.2.png>`__ (A) Different isoforms of
+
+.. image:: png/Fig.2.png
+  :width: 600
+
+Isoform analysis (A) Different isoforms of
 SNCA mRNA are detected and annotated with respect to their coding
 potential and protein domains. Moreover, the relative expression of the
 gene is displayed along with the relative expression of the isoforms as
@@ -88,8 +97,7 @@ implications of isoform switching are statistically significant between
 conditions. (D) Bar plots representing the distribution of the
 consequences of isoform switching events across genes.
 
-.. image:: png/Fig.2.png
-  :width: 600
+
 
 
 .. raw:: html
@@ -119,8 +127,10 @@ Lipidomics analysis
 -------------------
 
 Plots included here are generated if the user chose lipidr = true
+.. image:: png/Fig.4.png
+  :width: 600
 
-`Lipids </png/Fig.4.png>`__ Box plots of the relative fold change
+`Lipids <png/Fig.4.png>`__ Box plots of the relative fold change
 for each class of lipids is displayed (A) along with the output showing
 whether that fold change is enriched between conditions (B). The
 different classes of lipids shown are ceramides (CE), diglycerides
@@ -162,7 +172,10 @@ Plots included here are generated from RNAseq data however similar plots
 can be generated for proteomic data if provided with a count matrix and
 a samples info file:
 
-`MCIA </png/Fig.5.png>`__ (A) MCIA reports the PCA of the
+.. image:: png/Fig.5.png
+  :width: 600
+
+`MCIA <png/Fig.5.png>`__ (A) MCIA reports the PCA of the
 sample space where we can see how samples differentiate according to the
 phenotype of interest. (B) In addition, variables are projected on the
 same space to explore the relative contribution of each variable to the
@@ -171,7 +184,10 @@ significant principal components and in panel (D) the space of the
 pseudo-eigen values of the different datasets is displayed, as an
 indication of the relative contribution to the variance observed.
 
-`clusterprofiler </png/Fig.6.png>`__ Clusterprofiler can be
+.. image:: png/Fig.6.png
+  :width: 600
+
+`clusterprofiler <png/Fig.6.png>`__ Clusterprofiler can be
 utilized by individual analyses or after the integration step of MCIA.
 Outputs include heatmaps of enriched processes (A) and the top features
 that participate in these processes (B), as well as tree plots of
@@ -201,7 +217,12 @@ Output files
    </details>
 
 `Additional integration methods and
-biotranslator </png/Fig.7.png>`__ (A) MOI has unique tools for
+biotranslator <png/Fig.7.png>`__ 
+
+.. image:: png/Fig.7.png
+  :width: 600
+
+(A) MOI has unique tools for
 associating genes to the molecules found in metabolomic datasets and
 visualizing them across functional lipid categories and available omics
 data. (B) Correlation analysis performed with Pearson or Spearman can
@@ -246,6 +267,12 @@ Output files
 .. raw:: html
 
    </details>
+
+.. image:: png/FIG_7ALONG.png
+  :width: 600
+
+Demonstrational data from omnipathr. Visualization of networks of prioritized features. (A) The user can use omnipathr to annotate their network based on various attributes like location (shape), type of molecule (color) and whether or not it belongs to a specific function of interest (Tcell receptor signaling linked with transparency levels). (B) Specific deregulated pathways of the network are shown. The user can also choose to annotate based on the omics of origin of the prioritized features.  
+
 
 `Nextflow <https://www.nextflow.io/docs/latest/tracing.html>`__ provides
 excellent functionality for generating various reports relevant to the
