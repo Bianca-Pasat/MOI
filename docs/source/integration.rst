@@ -123,15 +123,44 @@ LipiDB
 LipidR will produce differentially expressed features for each category
 of lipids. Subsequently, LipiDB, using KREGGREST will find genes
 associated to these differentially expressed lipids, for each category.
-Input is the result of lipidR or in other words a txt file that has eregulated lipids along with their logFC and pval. The results are in as form of a text file and a heatmap.
+Input is the result of lipidR or in other words a txt file that has deregulated lipids along with their logFC and pval (In that order the columns)
+. The results are in as form of a text file and a heatmap.
+
+If the user wants to run LipiDB alone they need to declare it in nextflow.config:
+
+.. code:: bash
+
+      params{
+         lipidb_alone = true
+         }
+
+and this is the command to run it alone:
+
+.. code:: bash
+
+   nextflow run multiomicsintegrator/modules/local/annotate_lipids/main.nf -c multiomicsintegrator/nextflow.config -profile docker
 
 multiMiR
 ~~~~~~~~~
 
 MultiMiR is a database that stores predicted and experimentaly targets of miRNA. 
-As input it takes a txt file containing differentially expressed miRNAs.
+As input it takes a txt file containing differentially expressed miRNAs, in a single column.
 The output consists of two files, one containing only the targets and one storing
 the miRNA with their targets. 
+
+If the user wants to run multiMiR alone they need to declare it in nextflow.config:
+
+.. code:: bash
+
+      params{
+         multimir_alone = true
+         }
+
+and this is the command to run it alone:
+
+.. code:: bash
+
+   nextflow run multiomicsintegrator/modules/local/multimir/main.nf -c multiomicsintegrator/nextflow.config -profile docker
 
 
 Exploratory analysis
@@ -140,6 +169,35 @@ The pipeline produces automatically a heatmap with differentially expressed
 features and their presence accross available omics layers. As input it takes
 differentially expressed features and optionally the results from multiMiR and 
 LipiDB. 
+
+If the user wants to run multiMiR alone they need to declare it in nextflow.config:
+
+.. code:: bash
+
+      params{
+         preparedf_alone = true
+         preparedf_alone.genes = '[Logical, do you have genes?]'
+         preparedf_alone.mirna = '[Logical, do you have miRNA?]'
+         preparedf_alone.proteins = '[Logical, do you have proteins?]'
+         preparedf_alone.lipids = '[Logical, do you have lipids?]'
+         preparedf_alone.isoforms = '[Logical, do you have isoforms?]'
+         preparedf_alone.integrated = '[Logical, have you applied mcia?]'
+         preparedf_alone.integratedafterlipids = '[Logical, have you applied mcia and lipidomic analysis?]'
+         preparedf_alone.path   = '[Directory of the inputs]'  
+         preparedf_alone.alg_genes = '[Algorithm used for genes]'  
+         preparedf_alone.alg_mirna = '[Algorithm used for miRNA]'  
+         preparedf_alone.alg_proteins = '[Algorithm used for proteins]'  
+         preparedf_alone.pval  = '[pvalue cut off]'  
+         }
+
+Extremely important:
+The files should follow the same naming system as the output of MOI, for example for genes : genes_defeatures.txt!!!! 
+
+and this is the command to run it alone:
+
+.. code:: bash
+
+   nextflow run multiomicsintegrator/modules/local/prepare_df/main.nf -c multiomicsintegrator/nextflow.config -profile docker
 
 Correlation analysis
 ~~~~~~~~~~~~~~~~~~~~~
