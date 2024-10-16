@@ -130,7 +130,7 @@ Contents
    proteins
    lipids
    integration
-   general
    example_outputs
+   general
    ----------
 
