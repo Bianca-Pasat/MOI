@@ -57,6 +57,7 @@ Quick Start
    Paths of pathmcia and biotrans_all_path should be complete and follow this format: 
 
   .. code:: bash
+
       $outdir/mcia
       $outdir/prepareforbio
  
@@ -73,6 +74,7 @@ In addition check/modify resources (in params_mcia.yml) according to your system
 5. Run the pipeline by providing the full path to params-file argument 
 
  .. code:: bash
+
    NXF_VER=23.04.2 nextflow run multiomicsintegrator -params-file /full/path/to/params_mcia.yml -profile docker 
  
 
