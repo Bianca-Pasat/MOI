@@ -31,7 +31,7 @@ performs the following steps:
 4. Proteomics analysis
 5. Integration of multi omics data
 
-See diagram: `diagram.png </docs/images/figure1.png>`__
+See diagram: `diagram.png </png/Fig.1.png>`__
 
 RNAseq analysis
 ---------------
@@ -40,7 +40,7 @@ Plots included here are generated from RNAseq data however similar plots
 can be generated for proteomic data if provided with a count matrix and
 a samples info file:
 
-`RNAseq analysis </docs/images/figure3.png>`__ Box plots of samples
+`RNAseq analysis </png/Fig.3.png>`__ Box plots of samples
 after filtering and normalizations steps (A) as well as PCA plots of raw
 and cleaned for batch effect samples (B) provide quality control of the
 data. Heatmaps (C) and Volcano plots (D) offer visual indications of
@@ -77,7 +77,7 @@ Output files
 Isoform analysis
 ----------------
 
-`Isoform analysis </images/figure2.png>`__ (A) Different isoforms of
+`Isoform analysis </png/Fig.2.png>`__ (A) Different isoforms of
 SNCA mRNA are detected and annotated with respect to their coding
 potential and protein domains. Moreover, the relative expression of the
 gene is displayed along with the relative expression of the isoforms as
@@ -88,9 +88,9 @@ implications of isoform switching are statistically significant between
 conditions. (D) Bar plots representing the distribution of the
 consequences of isoform switching events across genes.
 
-.. raw:: html
+.. image:: png/Fig.2.png
+  :width: 600
 
-   <details>
 
 .. raw:: html
 
@@ -120,7 +120,7 @@ Lipidomics analysis
 
 Plots included here are generated if the user chose lipidr = true
 
-`Lipids </images/figure4.png>`__ Box plots of the relative fold change
+`Lipids </png/Fig.4.png>`__ Box plots of the relative fold change
 for each class of lipids is displayed (A) along with the output showing
 whether that fold change is enriched between conditions (B). The
 different classes of lipids shown are ceramides (CE), diglycerides
@@ -162,7 +162,7 @@ Plots included here are generated from RNAseq data however similar plots
 can be generated for proteomic data if provided with a count matrix and
 a samples info file:
 
-`MCIA </docs/images/figure5.png>`__ (A) MCIA reports the PCA of the
+`MCIA </png/Fig.5.png>`__ (A) MCIA reports the PCA of the
 sample space where we can see how samples differentiate according to the
 phenotype of interest. (B) In addition, variables are projected on the
 same space to explore the relative contribution of each variable to the
@@ -171,7 +171,7 @@ significant principal components and in panel (D) the space of the
 pseudo-eigen values of the different datasets is displayed, as an
 indication of the relative contribution to the variance observed.
 
-`clusterprofiler </docs/images/figure6.png>`__ Clusterprofiler can be
+`clusterprofiler </png/Fig.6.png>`__ Clusterprofiler can be
 utilized by individual analyses or after the integration step of MCIA.
 Outputs include heatmaps of enriched processes (A) and the top features
 that participate in these processes (B), as well as tree plots of
@@ -201,7 +201,7 @@ Output files
    </details>
 
 `Additional integration methods and
-biotranslator </docs/images/figure7.png>`__ (A) MOI has unique tools for
+biotranslator </png/Fig.7.png>`__ (A) MOI has unique tools for
 associating genes to the molecules found in metabolomic datasets and
 visualizing them across functional lipid categories and available omics
 data. (B) Correlation analysis performed with Pearson or Spearman can
