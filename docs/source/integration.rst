@@ -99,7 +99,7 @@ directory:
    # Other nextflow hidden files, eg. history of pipeline runs and old logs.
 
 Functionality
-~~~~~~~~~~~~~
+-------------
 
 MCIA utilizes mathematical techniques such as covariance analysis,
 optimization, and dimensionality reduction to integrate diverse omics
