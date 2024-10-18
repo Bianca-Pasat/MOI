@@ -311,7 +311,7 @@ Note
      alg_mirna     = 'edger' # Default
    }
 
-edger edger
+edgeR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: bash
@@ -322,7 +322,7 @@ edger edger
        edgercontrasts_mirna            = "TNBC-non_TNBC"  # contrasts of interest. Values have to be present in the samplesheet_mirna.csv
    }
 
-DESeq2 deseq
+DESeq2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Important note**
@@ -342,7 +342,7 @@ DESeq2 deseq
        deseq2single_matrix             = true   # if the input is a single matrix or a directory of files
    }
 
-RankProduct rankprod
+rankprod
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Inputs for to run RankProduct are the same, with a single difference:
