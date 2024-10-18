@@ -4,15 +4,12 @@ MOI: Output
 Introduction
 ------------
 
-This document describes the output produced by the pipeline.
+This document describes the outputs produced by MOI pipeline.
 
-The directories listed below will be created in the results directory
+The directories listed below will be created in the user's defined results directory
 after the pipeline has finished. All paths are relative to the top-level
 results directory.
 
-.. raw:: html
-
-   <!-- TODO nf-core: Write this documentation describing your workflow's output -->
 
 Pipeline overview
 -----------------
@@ -33,7 +30,7 @@ performs the following steps:
 
 See diagram: 
 
-.. image:: png/Fig.1.png
+.. image:: png/Figure_1.png
   :width: 600
 
 RNAseq analysis
