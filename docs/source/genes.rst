@@ -122,7 +122,7 @@ Important
 Start from SRA
 --------------
 
-Alternatively, instead of the providing with paths of fastq files you
+Alternatively, instead of providing with paths of fastq files you
 can provide a column with SRA **run** identifiers you wish to download
 from NCBI in the first column named sample and the second column has to
 be named sampleID and store the SRA **codes**:
@@ -295,7 +295,7 @@ depending on the state of their data.
 DEA
 ---
 
-Now,is time to perform differential expression analysis. We provide
+It is time now to perform differential expression analysis. We provide
 three different algorithms for that, which we describe below.
 
 Note
