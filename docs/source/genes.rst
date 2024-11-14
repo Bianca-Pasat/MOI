@@ -221,7 +221,7 @@ perform quality control, you can specify in the params_genes.yml file:
      skip_qc_genes= true
    }
 
-It then employs `salmon`__ in order to
+It then employs salmon in order to
 obtain quantification files that are outputed in
 ::
 
