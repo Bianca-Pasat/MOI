@@ -34,8 +34,8 @@ Important
    .. rubric:: If you have column names other than **condition** and
       **batch** you need to declare the names in the
       params_proteins.yml. See below
-      (preprocess_matrix.,dea,pea)
-      :name: if-you-have-column-names-other-than-condition-and-batch-you-need-to-declare-the-names-in-the-params_proteins.yml.-see-below-preprocess_matrix.deaclusterprofiler
+      (preprocess_matrix,dea,pea)
+      :name: if-you-have-column-names-other-than-condition-and-batch-you-need-to-declare-the-names-in-the-params_proteins.yml.-see-below-preprocess_matrixdeapea
 
 Running the pipeline
 --------------------
