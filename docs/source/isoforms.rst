@@ -7,7 +7,7 @@ Nessecary inputs
 
 You will need to create a samplesheet with information about the samples
 you would like to analyse before running the pipeline. It has to be a
-comma-separated file with 6 columns, and a header row as shown in the
+comma-separated file with 5 columns, and a header row as shown in the
 examples below.
 
 .. code:: console
@@ -26,8 +26,8 @@ Important
 
    .. rubric:: If you have column names other than **condition** and
       **batch** you need to declare the names in the
-      params_isoforms.yml. See below (Preprocess,DEA,PAE)
-      :name: if-you-have-column-names-other-than-condition-and-batch-you-need-to-declare-the-names-in-the-params_isoforms.yml.-see-below-preprocessdeapae
+      params_isoforms.yml. See below (Preprocess,DEA,PEA)
+      :name: if-you-have-column-names-other-than-condition-and-batch-you-need-to-declare-the-names-in-the-params_isoforms.yml.-see-below-preprocessdeapea
 
 .. code:: console
 
@@ -122,7 +122,7 @@ Important
 Start from SRA
 --------------
 
-Alternatively, instead of the providing with paths of fastq files you
+Alternatively, instead of providing with paths of fastq files you
 can provide a column with SRA **run** identifiers you wish to download
 from NCBI in the first column named sample and the second column has to
 be named sampleID and store the SRA **codes**:
@@ -153,7 +153,7 @@ Running the pipeline
 --------------------
 
 In order to run the isoform part of the pipeline you have to modify one
-file, specofying which part of the analysis you want to run and
+file, specifying which part of the analysis you want to run and
 parameters associated with
 it: `params_isoforms.yml <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/params_isoforms.yml>`__
 
@@ -161,14 +161,14 @@ it: `params_isoforms.yml <https://github.com/ASAGlab/MOI--An-integrated-solution
 
    params{
    outdir   '[full path of location you want to output]'
-   salmonDirIso '[full path of directory where outdir is/isoforms/salmon_isoforms/'
+   salmonDirIso '[full path of directory where outdir is/isoforms/salmon_isoforms/]'
    input_isoforms '[full path of samplesheet with SRA code or location of fastq files]'
 
    }
 
 In addition you have to provide suitable reference fasta files regarding
 genome, transcripts and a gtf file regarding the genomic coordinates of
-the organism you study.
+the organism in study.
 
 .. code:: bash
 
@@ -236,8 +236,8 @@ Note: All files need to be in the format:
      - quant.sf
 
 After that isoformSwitchAnalyzer is used, which takes these
-quantification files and performs differential expression analysis on
-the level of both isoforms and genes. IsoformSwitchAnalyzer requires a
+quantification files and performs differential expression analysis on both
+the level of isoforms and genes. IsoformSwitchAnalyzer requires a
 samplesheet_isoforms.csv (phenotype file) with necessary columns
 sampleID and condition. The design matrix is of the form :
 
@@ -245,10 +245,10 @@ sampleID and condition. The design matrix is of the form :
 
    ~0 + condition
 
-Then diferentially expressed feaatures are collected and their sequences
-are annotated regarding their coding potential CPAT, their homology
-with protein domains Pfam and the existense of any signaling sequence
-signalP. This is performed with subworkflow functional_annotation.nf
+Then diferentially expressed features are collected and their sequences
+are annotated regarding their coding potential [CPAT], their homology
+with protein domains [Pfam] and the existense of any signaling sequence
+[signalP]. This is performed with subworkflow functional_annotation.nf
 
 Next step of the analysis is to asses functional implications of the
 differentially isoform/exon usage on the expression of the different
