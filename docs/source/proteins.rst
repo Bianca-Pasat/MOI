@@ -32,10 +32,10 @@ Important
       :name: sample-names-have-to-be-in-the-first-column-or-in-a-column-called-sampleid-and-need-to-match-the-column-names-of-your-count-matrix.
 
    .. rubric:: If you have column names other than **condition** and
-      **batch** you need to change declare the names in the
+      **batch** you need to declare the names in the
       params_proteins.yml. See below
       (preprocess_matrix.,dea,clusterprofiler)
-      :name: if-you-have-column-names-other-than-condition-and-batch-you-need-to-change-declare-the-names-in-the-params_proteins.yml.-see-below-preprocess_matrix.deaclusterprofiler
+      :name: if-you-have-column-names-other-than-condition-and-batch-you-need-to-declare-the-names-in-the-params_proteins.yml.-see-below-preprocess_matrix.deaclusterprofiler
 
 Running the pipeline
 --------------------
@@ -59,6 +59,7 @@ directory:
    .nextflow_log       # Log file from Nextflow
    # Other nextflow hidden files, eg. history of pipeline runs and old logs.
 
+
 Functionality
  ============
 
@@ -66,8 +67,7 @@ Preprocess
 ^^^^^^^^^^
 
 
-
-Initially, there is an optional module preprocess_matrix that preprocesses this matrix. 
+Initially, there is an optional module preprocess_matrix with various preprocessing steps. 
 Namely, the user can perform filtering, normalization and batch effect correction, 
 depending on the state of their data.
 
@@ -75,18 +75,18 @@ depending on the state of their data.
       describing the states of the experiment (ctr vs treat) and one
       called “batch” describing batches of the experiment (if there is
       no batch then the replicate column is the batch). If the user
-      wants other names they user have to specify in the
+      wants other names they have to specify in the
       params_proteins.yml the column name of their conditions and that
       column name to be present in the input_proteins.csv file:
-      :name: input_proteins-should-have-a-column-named-condition-describing-the-states-of-the-experiment-ctr-vs-treat-and-one-called-batch-describing-batches-of-the-experiment-if-there-is-no-batch-then-the-replicate-column-is-the-batch.-if-the-user-wants-other-names-they-user-have-to-specify-in-the-params_proteins.yml-the-column-name-of-their-conditions-and-that-column-name-to-be-present-in-the-input_proteins.csv-file
+      :name: input_proteins-should-have-a-column-named-condition-describing-the-states-of-the-experiment-ctr-vs-treat-and-one-called-batch-describing-batches-of-the-experiment-if-there-is-no-batch-then-the-replicate-column-is-the-batch.-if-the-user-wants-other-names-they-have-to-specify-in-the-params_proteins.yml-the-column-name-of-their-conditions-and-that-column-name-to-be-present-in-the-input_proteins.csv-file
 
 .. code:: bash
 
 
    params{
 
-       mom_norm_condition_proteins           = "condition"   # must be columns in samples info 
-       mom_norm_treatment_proteins           = "condition"   # must be columns in samples info 
+       mom_norm_condition_proteins           = "condition"   # must be column in samples info 
+       mom_norm_treatment_proteins           = "condition"   # must be column in samples info 
        mom_batch_condition_proteins       = "condition"    # which is the condition of interest, must be present in columns of sample info
        mom_batch_batch_proteins           = "batch"  
    }
@@ -117,7 +117,7 @@ edger
 
    params{
        dgergroupingfactor_proteins        =  "condition" # column name where your treatments are located
-       edgerformulamodelmatrix_proteins   =  "~0 + condition" # design matrix, values have to be column names in deseq2 samplesheet_proteins.csv
+       edgerformulamodelmatrix_proteins   =  "~0 + condition" # design matrix, values have to be column names in the samplesheet_proteins.csv
        edgercontrasts_proteins            = "TNBC-non_TNBC"  # contrasts of interest. Values have to be present in the samplesheet_proteins.csv
    }
 
@@ -127,7 +127,7 @@ DESeq2
 **Important note**
 ~~~~~~~~~~~~~~~~~~
 
-   For DESeq2 to run you need to have the column of the treatments in
+   For DESeq2 to run, the column of the treatments in
    the samplesheet_proteins.csv has to be named **condition** and the
    batches **batch**
 
