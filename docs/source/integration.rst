@@ -32,15 +32,15 @@ of each sample.
          - lipids.txt
        
 
-Alternatively, if you mcia is used as with pipeline-generated data you
+Alternatively, if mcia is used with pipeline-generated data you
 should declare these variables as follows:
 
 .. code:: bash
 
    params{
-     outdir: '/home/bianca/testresultsintegration' ### If outdir =  results then pathmcia should: /complete/path/to/results/mcia/ biotransl_all_path:path/to/results/prepareforbio
-     pathmcia  = '/$outdir/mcia/'  # should of the string of the format /complete/path/to/results/mcia/ 
-     biotrans_all_path  : "/home/bianca/testresultsintegration/prepareforbio/"  # should of the string of the format /complete/path/to/results/prepareforbio/ 
+     outdir: '/home/results/' ### If outdir =  results then pathmcia should: /complete/path/to/results/mcia/ biotransl_all_path:path/to/results/prepareforbio
+     pathmcia  = '/home/results/mcia/'  # should of the string of the format /complete/path/to/results/mcia/ 
+     biotrans_all_path  : "/home/results/prepareforbio/"  # should of the string of the format /complete/path/to/results/prepareforbio/ 
      }
 
 Additionally, you need to change parameters in
@@ -51,8 +51,6 @@ Additionally, you need to change parameters in
 
    params{
      runmcia = true
-     outdir =  '[full path of location you want to output]'
-     pathmcia = 'directory that store the different omics data'
      samplesinfomcia = 'path of you samples info file'
      a1lim = limits of your X space, Default :  '0, Inf'
      a2lim = limits of your Y space, Default :  '0, Inf'
@@ -71,8 +69,8 @@ Important
       :name: sample-names-have-to-be-in-the-first-column-or-in-a-column-called-sampleid-and-need-to-match-the-column-names-of-your-count-matrix.
 
    .. rubric:: If you have column names other than **condition** you
-      need to change declare the names in the params_mcia.yml.
-      :name: if-you-have-column-names-other-than-condition-you-need-to-change-declare-the-names-in-the-params_mcia.yml.
+      need to declare the names in the params_mcia.yml.
+      :name: if-you-have-column-names-other-than-condition-you-need-to-declare-the-names-in-the-params_mcia.yml.
 
    .. rubric:: Sample names have to be identical between different omics types!
 
@@ -101,19 +99,19 @@ directory:
 Functionality
 -------------
 
-MCIA utilizes mathematical techniques such as covariance analysis,
+MCIA utilizes techniques such as covariance analysis,
 optimization, and dimensionality reduction to integrate diverse omics
 datasets. It starts by centering and scaling data, then identifies
 shared patterns through joint covariance analysis. Through optimization,
 it determines coefficients for each feature, quantifying their
-contribution to shared structures. The method constructs latent
-variables or components, representing these shared patterns. If needed,
+contribution to the shared structures. The method constructs latent
+variables (or components), representing these shared patterns. If needed,
 dimensionality reduction is applied for a more concise interpretation.
-This comprehensive mathematical approach allows MCIA to effectively
+This comprehensive approach allows MCIA to effectively
 capture commonalities and distinctions in multi-omics data, offering
 insights into complex biological relationships.
 
-Additionally, we offer the possibility of funtional integration of data
+Additionally, we offer the possibility of functional integration of data
 to cover scenarios in which MCIA cannot be applied. Namely, we offer 
 
 
@@ -121,12 +119,12 @@ LipiDB
 ~~~~~~~~~~~~~~~~~~~
 
 LipidR will produce differentially expressed features for each category
-of lipids. Subsequently, LipiDB, using KREGGREST will find genes
+of lipids. Subsequently, LipiDB, using KREGGREST and a local daabase, will find genes
 associated to these differentially expressed lipids, for each category.
-Input is the result of lipidR or in other words a txt file that has deregulated lipids along with their logFC and pval (In that order the columns)
-. The results are in as form of a text file and a heatmap.
+Input is the result of lipidR or in other words a txt file that has deregulated lipids along with their logFC and pval (Columns should be in that order).
+The results are in as form of a text file and a heatmap.
 
-If the user wants to run LipiDB alone they need to declare it in nextflow.config:
+If the user wants to run LipiDB alone they need to declare it in nextflow.confi:
 
 .. code:: bash
 
@@ -219,7 +217,7 @@ We suggest to use the count matrices of the differentially expressed features.
 
 
 Additionally, we offer a
-**comparative_analysis** tool,which estimates the semantic distance 
+**comparative_analysis** tool, which estimates the semantic distance 
 (e.g. the similarity of their pathways) of two features signatures. 
 Input is a txt file, with each column storing one distinct feature signature. 
 Available parameters are:
@@ -255,7 +253,7 @@ or
 
 OmnipathR
 ~~~~~~~~~~~~
-OmnipathR is a knowledge database that stores multiple levels of Biological Information. In MOI omnipathr can run as part of the pipeline or as a standalone tool. As part of the pipeline it takes the hub genes and forms a network out of protein protein interactions. Moreover, it can annotate the hub features based on the role of the feature (e.g., ligand, transcription factor etc.) in the signaling pathway they reside in. By leveraging this information it can then reconstruct the pathways that exist in the network, an aspect crucial in signaling specific contexts. 
+OmnipathR is a knowledge database that stores multiple levels of biological information. In MOI omnipathr can run as part of the pipeline or as a standalone tool. As part of the pipeline it takes the hub genes and forms a network of protein protein interactions. Moreover, it can annotate the hub features based on the role of the feature (e.g., ligand, transcription factor etc.) in the signaling pathway they reside in. By leveraging this information it can then reconstruct the pathways that exist in the network, an aspect crucial in signaling specific contexts. 
 
 Detailed information on how to run the tool is listed below: 
 
@@ -327,6 +325,6 @@ The command to run it as a standalone module is:
 Additional omics types
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-MOI can be extended to other omics types as well. Is supplied with abundance matrices (for example glycomics) MOI can integrate it with MCIA, after performing basic filtering and normalization steps. 
+MOI can be extended to other omics types as well. If supplied with abundance matrices (for example glycomics) MOI can integrate them with MCIA, after performing basic filtering and normalization steps. 
 If translated into the gene level, MOI can integrate them with the exploratory analysis tool, multiMiR, lipidDB as explained above. In addition, if translated to the gene level additional omics types can be integrated with high-level approaches like biotranslator, comparative analysis tool or omnipathr. 
 The user will treat these data as they were gene data.  
