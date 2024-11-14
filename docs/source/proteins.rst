@@ -135,7 +135,7 @@ DESeq2
 
    params{
        batchdeseq2_proteins               = false # perform batch effect correction
-       deseqFormula_proteins              = "~0 + condition"  # design matrix, values have to be column names in deseq2 samplesheet_proteins.csv
+       deseqFormula_proteins              = "~0 + condition"  # design matrix, values have to be column names in the samplesheet_proteins.csv
        con1_proteins                     = "mkc"   # control, has to be cell in samplesinfo
        con2_proteins                     = "dmso"  # treatment, has to be cell in samplesinfo
        deseq2single_matrix             = true   # if the input is a single matrix or a directory of files
