@@ -317,7 +317,7 @@ edger
 
    params{
        dgergroupingfactor_genes        =  "condition" # column name where your treatments are located
-       edgerformulamodelmatrix_genes   =  "~0 + condition" # design matrix, values have to be column names in deseq2 samplesheet_genes.csv
+       edgerformulamodelmatrix_genes   =  "~0 + condition" # design matrix, values have to be column names in samplesheet_genes.csv
        edgercontrasts_genes            = "TNBC-non_TNBC"  # contrasts of interest. Values have to be present in the samplesheet_genes.csv
    }
 
@@ -335,7 +335,7 @@ DESeq2
 
    params{
        batchdeseq2_genes               = false # perform batch effect correction
-       deseqFormula_genes              = "~0 + condition"  # design matrix, values have to be column names in deseq2 samlesInfo_genes.txt
+       deseqFormula_genes              = "~0 + condition"  # design matrix, values have to be column names in samlesInfo_genes.txt
        con1_genes                     = "mkc"   # control, has to be cell in samplesinfo
        con2_genes                     = "dmso"  # treatment, has to be cell in samplesinfo
        deseq2single_matrix             = true   # if the input is a single matrix or a directory of files
