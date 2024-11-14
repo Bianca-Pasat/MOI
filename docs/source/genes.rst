@@ -274,10 +274,10 @@ depending on the state of their data.
       describing the states of the experiment (ctr vs treat) and one
       called “batch” describing batches of the experiment (if there is
       no batch then the replicate column is the batch). If the user
-      wants other names they user have to specify in the
+      wants other names they have to specify in the
       params_genes.yml the column name of their conditions and that
       column name to be present in the samplesheet_genes.csv file:
-      :name: input_genes-should-have-a-column-named-condition-describing-the-states-of-the-experiment-ctr-vs-treat-and-one-called-batch-describing-batches-of-the-experiment-if-there-is-no-batch-then-the-replicate-column-is-the-batch.-if-the-user-wants-other-names-they-user-have-to-specify-in-the-params_genes.yml-the-column-name-of-their-conditions-and-that-column-name-to-be-present-in-the-samplesheet_genes.csv-file
+      :name: input_genes-should-have-a-column-named-condition-describing-the-states-of-the-experiment-ctr-vs-treat-and-one-called-batch-describing-batches-of-the-experiment-if-there-is-no-batch-then-the-replicate-column-is-the-batch.-if-the-user-wants-other-names-they-have-to-specify-in-the-params_genes.yml-the-column-name-of-their-conditions-and-that-column-name-to-be-present-in-the-samplesheet_genes.csv-file
 
 .. code:: bash
 
@@ -285,8 +285,8 @@ depending on the state of their data.
    params{
        mom_filt_method_genes           = "filterByExp"  # filterByExp or choose a cutoff value
        mom_norm_method_genes           = "quantile"     # calcNorm quantile
-       mom_norm_condition_genes           = "condition"   # must be columns in samples info 
-       mom_norm_treatment_genes           = "condition"   # must be columns in samples info 
+       mom_norm_condition_genes           = "condition"   # must be column in samples info 
+       mom_norm_treatment_genes           = "condition"   # must be column in samples info 
        mom_batch_method_genes          = "com" # com for combat, sva,  comsva for combat & sva, svacom for sva and comba, none
        mom_batch_condition_genes       = "condition"    # which is the condition of interest, must be present in columns of sample info
        mom_batch_batch_genes           = "batch"  
@@ -295,7 +295,7 @@ depending on the state of their data.
 DEA
 ---
 
-It is time now to perform differential expression analysis. We provide
+Next step is differential expression analysis. We provide
 three different algorithms for that, which we describe below.
 
 Note
@@ -327,7 +327,7 @@ DESeq2
 **Important note**
 ~~~~~~~~~~~~~~~~~~
 
-   For DESeq2 to run you need to have the column of the treatments in
+   For DESeq2 to run, the column of the treatments in
    the samplesheet_genes.csv has to be named **condition** and the
    batches **batch**
 
