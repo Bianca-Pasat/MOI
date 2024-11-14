@@ -26,7 +26,7 @@ Important
 
    .. rubric:: If you have column names other than **condition** and
       **batch** you need to declare the names in the params_genes.yml.
-      See below (Preprocess,DEA,PAE)
+      See below (Preprocess,DEA,PEA)
       :name: if-you-have-column-names-other-than-condition-and-batch-you-need-to-declare-the-names-in-the-params_genes.yml.-see-below-preprocessdeapea
 
 .. code:: console
