@@ -221,8 +221,7 @@ perform quality control, you can specify in the params_mirna.yml file:
      skip_qc_mirna= true
    }
 
-It then employs `salmon <../modules/nf-core/salmon>`__ in order to
-obtain quantification files that are outputed in
+It then employs salmon in order to obtain quantification files that are outputed in
 
 ::
 
@@ -275,10 +274,10 @@ depending on the state of their data.
       describing the states of the experiment (ctr vs treat) and one
       called “batch” describing batches of the experiment (if there is
       no batch then the replicate column is the batch). If the user
-      wants other names they user have to specify in the
+      wants other names they have to specify in the
       params_mirna.yml the column name of their conditions and that
       column name to be present in the input_mirna file:
-      :name: input_mirna-should-have-a-column-named-condition-describing-the-states-of-the-experiment-ctr-vs-treat-and-one-called-batch-describing-batches-of-the-experiment-if-there-is-no-batch-then-the-replicate-column-is-the-batch.-if-the-user-wants-other-names-they-user-have-to-specify-in-the-params_mirna.yml-the-column-name-of-their-conditions-and-that-column-name-to-be-present-in-the-input_mirna-file
+      :name: input_mirna-should-have-a-column-named-condition-describing-the-states-of-the-experiment-ctr-vs-treat-and-one-called-batch-describing-batches-of-the-experiment-if-there-is-no-batch-then-the-replicate-column-is-the-batch.-if-the-user-wants-other-names-they-have-to-specify-in-the-params_mirna.yml-the-column-name-of-their-conditions-and-that-column-name-to-be-present-in-the-input_mirna-file
 
 .. code:: bash
 
@@ -286,8 +285,8 @@ depending on the state of their data.
    params{
        mom_filt_method_mirna           = "filterByExp"  # filterByExp or choose a cutoff value
        mom_norm_method_mirna           = "quantile"     # calcNorm quantile
-       mom_norm_condition_mirna           = "condition"   # must be columns in samples info 
-       mom_norm_treatment_mirna           = "condition"   # must be columns in samples info 
+       mom_norm_condition_mirna           = "condition"   # must be column in samples info 
+       mom_norm_treatment_mirna           = "condition"   # must be column in samples info 
        mom_batch_method_mirna          = "com" # com for combat, sva,  comsva for combat & sva, svacom for sva and comba, none
        mom_batch_condition_mirna       = "condition"    # which is the condition of interest, must be present in columns of sample info
        mom_batch_batch_mirna           = "batch"  
@@ -328,7 +327,7 @@ DESeq2
 **Important note**
 ~~~~~~~~~~~~~~~~~~
 
-   For DESeq2 to run you need to have the column of the treatments in
+   For DESeq2 to run, the column of the treatments in
    the samplesheet_mirna.csv has to be named **condition** and the
    batches **batch**
 
