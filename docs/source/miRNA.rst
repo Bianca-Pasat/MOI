@@ -317,7 +317,7 @@ edgeR
 
    params{
        dgergroupingfactor_mirna        =  "condition" # column name where your treatments are located
-       edgerformulamodelmatrix_mirna   =  "~0 + condition" # design matrix, values have to be column names in deseq2 samplesheet_mirna.csv
+       edgerformulamodelmatrix_mirna   =  "~0 + condition" # design matrix, values have to be column names in the samplesheet_mirna.csv
        edgercontrasts_mirna            = "TNBC-non_TNBC"  # contrasts of interest. Values have to be present in the samplesheet_mirna.csv
    }
 
@@ -335,7 +335,7 @@ DESeq2
 
    params{
        batchdeseq2_mirna               = false # perform batch effect correction
-       deseqFormula_mirna              = "~0 + condition"  # design matrix, values have to be column names in deseq2 samplesheet_mirna.csv
+       deseqFormula_mirna              = "~0 + condition"  # design matrix, values have to be column names in the samplesheet_mirna.csv
        con1_mirna                     = "mkc"   # control, has to be cell in samplesheet_mirna.csv
        con2_mirna                     = "dmso"  # treatment, has to be cell in samplesheet_mirna.csv
        deseq2single_matrix             = true   # if the input is a single matrix or a directory of files
