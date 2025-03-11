@@ -236,7 +236,7 @@ phenotype, interconnected with hub genes (x axis).
 .. image:: png/FIG_7Along.png
   :width: 600
 
-Demonstrational data from omnipathr. Visualization of networks of prioritized features. (A) The user can use omnipathr to annotate their network based on various attributes like location (shape), type of molecule (color) and whether or not it belongs to a specific function of interest (Tcell receptor signaling linked with transparency levels). (B) Specific deregulated pathways of the network are shown. The user can also choose to annotate based on the omics of origin of the prioritized features.  
+Demonstrational data from omnipathr. Visualization of networks of prioritized features. (A) The user can use omnipathr to annotate their network based on various attributes like location (shape), type of molecule (color) and whether or not it belongs to a specific function of interest (T cell receptor signaling linked with transparency levels). (B) Specific deregulated pathways of the network are shown. The user can also choose to annotate based on the omics of origin of the prioritized features.  
 
 
 
