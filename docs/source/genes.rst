@@ -207,7 +207,7 @@ Functionality
 ~~~~~~~~~~~~~
 
 The pipeline initially downloads SRA codes and converts the runs into
-fastq files. Alternativey you can provide local fastq files. It then
+fastq files. Alternatively, you can provide local fastq files. It then
 performs quality control with FASTQC and
 then automatically detects and removes adapters with
 Trimgalore.
