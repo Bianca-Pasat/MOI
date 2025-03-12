@@ -137,7 +137,7 @@ be named sampleID and store the SRA **codes**:
 An `example samplesheet <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/assets/samplesheet_genes.csv>`__ has been
 provided with the pipeline.
 
-Refference files
+Reference files
 ----------------
 
 The user can choose to run the pipeline using fasta and gtf files
