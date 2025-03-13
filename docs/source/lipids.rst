@@ -2,7 +2,7 @@ Lipids
 ======
 
 
-Nessecary inputs
+Necessary inputs
 ----------------
 
 The pipeline has as input the `count matrix <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/assets/lipids.txt>`__
