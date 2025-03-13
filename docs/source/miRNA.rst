@@ -2,7 +2,7 @@ miRNA
 ======
 
 
-Nessecary inputs
+Necessary inputs
 ----------------
 
 You will need to create a samplesheet with information about the samples
@@ -108,8 +108,8 @@ Important
 |   |                                                                   |
 |   |                                                                   |
 +---+-------------------------------------------------------------------+
-|   | Describes unwanted source of variation (e.g. technical            |
-|   | replicates, different platfroms, different batches etc.).         |
+|   | Describes unwanted source of variation (e.g., technical            |
+|   | replicates, different platforms, different batches etc.).         |
 | b |                                                                   |
 | a |                                                                   |
 | t |                                                                   |
@@ -137,7 +137,7 @@ be named sampleID and store the SRA **codes**:
 An `example samplesheet <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/assets/samplesheet_mirna.csv>`__ has been
 provided with the pipeline.
 
-Refference files
+Reference files
 ----------------
 
 The user can choose to run the pipeline using fasta and gtf files
@@ -150,7 +150,7 @@ supplied by aws:
      igenomes_ignore            : false 
    }
 
-Alternatively, they can provide the location of local refference files:
+Alternatively, they can provide the location of local reference files:
 
 .. code:: bash
 
@@ -202,14 +202,14 @@ directory:
    work                'Directory containing the nextflow working files'
    <OUTDIR>            ' Location of where you want your results (defined by outdir)' 
    .nextflow_log       # Log file from Nextflow
-   # Other nextflow hidden files, eg. history of pipeline runs and old logs.
+   # Other nextflow hidden files, e.g., history of pipeline runs and old logs.
 
 Functionality
 ~~~~~~~~~~~~~
 
 The pipeline initially downloads SRA codes and converts the runs into fastq files. 
-Alternativey you can provide local fastq files. 
-It then performs quality control with  FASTQC 
+Alternatively, you can provide local fastq files. 
+It then performs quality control with FASTQC 
 and then automatically detects and removes adapters with Trimgalore.
 
 Each of the above steps can be skipped, for example if you don’t want to
@@ -221,7 +221,7 @@ perform quality control, you can specify in the params_mirna.yml file:
      skip_qc_mirna= true
    }
 
-It then employs salmon in order to obtain quantification files that are outputed in
+It then employs salmon in order to obtain quantification files that are outputted in
 
 ::
 
@@ -295,7 +295,7 @@ depending on the state of their data.
 DEA
 ---
 
-Now,is time to perform differential expression analysis. We provide
+At this stage, it is time to perform differential expression analysis. We provide
 three different algorithms for that, which we describe below.
 
 Note
@@ -358,7 +358,7 @@ asign **0 to controls and 1 to treatments**
 PAE
 ---
 
-Last step of the analysis is to perform pathway enrichment analysis with
+The last step of the analysis is to perform pathway enrichment analysis with
 clusterprofiler or biotranslator
 
 .. code:: bash
