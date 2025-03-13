@@ -355,7 +355,7 @@ asign **0 to controls and 1 to treatments**
    CONTROL_REP2,1
    TREATMENT_REP1,0
 
-PAE
+Pathway Enrichment Analysis (PEA)
 ---
 
 The last step of the analysis is to perform pathway enrichment analysis with
