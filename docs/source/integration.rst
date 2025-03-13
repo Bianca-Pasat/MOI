@@ -9,7 +9,7 @@ The pipeline can be used to integrate simultaneously different types of omics da
 The method we currently provide is Multiple Co-Inertia Analysis (MCIA).
 
 You can either run MCIA with your own data or choose this module as an
-additional step on your analyses. Check
+additional step in your analyses. Check
 `params_mcia.yml <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/params_mcia.yml>`__.
 
 You need to provide the path in (pathmcia variable) in which you store
@@ -17,8 +17,8 @@ the different omics data and a samples info file describing the metadata
 of each sample.
 
    The path you provide should consist of sub-directories named after
-   the omics type you have. For example if I have proteins and mirnas my
-   mcia directory will look like:
+   the omics type you have. For example, if I have proteins and miRNAs my
+   MCIA directory will look like:
 
 .. code:: plaintext
 
@@ -31,7 +31,7 @@ of each sample.
          - lipids.txt
        
 
-Alternatively, if mcia is used with pipeline-generated data you
+Alternatively, if MCIA is used with pipeline-generated data you
 should declare these variables as follows:
 
 .. code:: bash
