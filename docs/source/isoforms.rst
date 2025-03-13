@@ -108,7 +108,7 @@ Important
 |   |                                                                   |
 |   |                                                                   |
 +---+-------------------------------------------------------------------+
-|   | Describes unwanted source of variation (e.g. technical            |
+|   | Describes unwanted source of variation (e.g., technical            |
 |   | replicates, different platfroms, different batches etc.).         |
 | b |                                                                   |
 | a |                                                                   |
@@ -137,10 +137,10 @@ be named sampleID and store the SRA **codes**:
 An `example samplesheet <https://github.com/ASAGlab/MOI--An-integrated-solution-for-omics-analyses/blob/main/assets/samplesheet_isoforms.csv>`__ has been
 provided with the pipeline.
 
-Refference files
+Reference files
 ----------------
 
-The user has to provide the location of local refference files:
+The user has to provide the location of local reference files:
 
 .. code:: bash
 
@@ -198,7 +198,7 @@ directory:
    # Other nextflow hidden files, eg. history of pipeline runs and old logs.
 
 The pipeline initially downloads SRA codes and converts the runs into
-fastq files. Alternativey you can provide local fastq files. It then
+fastq files. Alternatively, you can provide local fastq files. It then
 performs quality control with [FASTQC] and then automatically detects
 and removes adapterS with [Trimgalore].
 
@@ -247,14 +247,14 @@ sampleID and condition. The design matrix is of the form :
 
 Then diferentially expressed features are collected and their sequences
 are annotated regarding their coding potential [CPAT], their homology
-with protein domains [Pfam] and the existense of any signaling sequence
+with protein domains [Pfam] and the existence of any signaling sequence
 [signalP]. This is performed with subworkflow functional_annotation.nf
 
-Next step of the analysis is to asses functional implications of the
+The next step of the analysis is to assess functional implications of the
 differentially isoform/exon usage on the expression of the different
-genes and isoforms. We provide many insightful plots for this reason
+genes and isoforms. We provide many insightful plots for this purpose
 under the direcorty OUTDIR/isovisual. Moreover, we additionally provide
 one output specifically focused on lncRNAs and a correlation matrix
 between differentially expressed lncRNAs and genes. Lastly, we provide
-the R object if the user wishes to inspect the results more thouroughly.
+the R object if the user wishes to inspect the results more thoroughly.
 
