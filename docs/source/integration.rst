@@ -163,7 +163,7 @@ and this is the command to run it alone:
 Exploratory analysis
 ~~~~~~~~~~~~~~~~~~~~
 The pipeline produces automatically a heatmap with differentially expressed
-features and their presence accross available omics layers. As input it takes
+features and their presence across available omics layers. As input it takes
 differentially expressed features and optionally the results from multiMiR and 
 LipiDB. 
 
