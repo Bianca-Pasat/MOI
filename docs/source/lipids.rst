@@ -75,9 +75,8 @@ All in one analysis with LipidR
 
 We provide the possibility to perform the proprocessing steps, as well
 as the the differential expression analysis using the R Bioconductor
-package lipidr. Lipidr provides additional exploratory plots regarding 
-the different classes of lipids as well as if there is any enrichment 
-of these classes between conditions. 
+package lipidR. LipidR provides additional exploratory plots regarding 
+the different classes of lipids as well as any enrichment of these classes between conditions. 
 Moreover, it provides with information abou the saturation level 
 of the carbon chains of the different classes of lipids between conditions.
 
