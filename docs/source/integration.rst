@@ -323,6 +323,6 @@ The command to run it as a standalone module is:
 Additional omics types
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-MOI can be extended to other omics types as well. If supplied with abundance matrices (for example glycomics) MOI can integrate them with MCIA, after performing basic filtering and normalization steps. 
+MOI can be extended to other omics types as well. If supplied with abundance matrices (for example, glycomics) MOI can integrate them with MCIA, after performing basic filtering and normalization steps. 
 If translated into the gene level, MOI can integrate them with the exploratory analysis tool, multiMiR, lipidDB as explained above. In addition, if translated to the gene level additional omics types can be integrated with high-level approaches like biotranslator, comparative analysis tool or OmnipathR. 
 The user will treat these data as if they were gene data.  
