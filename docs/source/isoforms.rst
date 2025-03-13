@@ -2,7 +2,7 @@ Isoforms
 ========
 
 
-Nessecary inputs
+Necessary inputs
 ----------------
 
 You will need to create a samplesheet with information about the samples
