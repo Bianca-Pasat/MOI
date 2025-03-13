@@ -4,10 +4,9 @@ Integration
 Necessary inputs
 ----------------
 
-The pipeline gives the possibility to integrate simultaneously different
-types of omics data.
+The pipeline can be used to integrate simultaneously different types of omics data.
 
-The method we currently provide is MCIA (Multiple Co-Inertia Analysis).
+The method we currently provide is Multiple Co-Inertia Analysis (MCIA).
 
 You can either run MCIA with your own data or choose this module as an
 additional step on your analyses. Check
