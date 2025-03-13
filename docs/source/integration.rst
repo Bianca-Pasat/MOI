@@ -164,7 +164,7 @@ Exploratory analysis
 ~~~~~~~~~~~~~~~~~~~~
 The pipeline produces automatically a heatmap with differentially expressed
 features and their presence across available omics layers. As input it takes
-differentially expressed features and optionally the results from multiMiR and 
+differentially expressed features and, optionally, the results from multiMiR and 
 LipiDB. 
 
 If the user wants to run multiMiR alone they need to declare it in nextflow.config:
@@ -199,8 +199,7 @@ and this is the command to run it alone:
 Correlation analysis
 ~~~~~~~~~~~~~~~~~~~~~
 
-to estimate correlation between differentially expressed features. 
-We suggest to use the count matrices of the differentially expressed features.
+To estimate correlation between differentially expressed features we suggest to use the count matrices of the differentially expressed features.
 
 .. code:: bash
 
@@ -217,7 +216,7 @@ We suggest to use the count matrices of the differentially expressed features.
 
 Additionally, we offer a
 **comparative_analysis** tool, which estimates the semantic distance 
-(e.g. the similarity of their pathways) of two features signatures. 
+(e.g., the similarity of their pathways) of two features signatures. 
 Input is a txt file, with each column storing one distinct feature signature. 
 Available parameters are:
 
@@ -252,7 +251,7 @@ or
 
 OmnipathR
 ~~~~~~~~~~~~
-OmnipathR is a knowledge database that stores multiple levels of biological information. In MOI omnipathr can run as part of the pipeline or as a standalone tool. As part of the pipeline it takes the hub genes and forms a network of protein protein interactions. Moreover, it can annotate the hub features based on the role of the feature (e.g., ligand, transcription factor etc.) in the signaling pathway they reside in. By leveraging this information it can then reconstruct the pathways that exist in the network, an aspect crucial in signaling specific contexts. 
+OmnipathR is a knowledge database that stores multiple levels of biological information. In MOI OmnipathR can run as part of the pipeline or as a standalone tool. As part of the pipeline it takes the hub genes and forms a network of protein protein interactions. Moreover, it can annotate the hub features based on the role of the feature (e.g., ligand, transcription factor etc.) in the signaling pathway they reside in. By leveraging this information it can then reconstruct the pathways that exist in the network, an aspect crucial in signaling specific contexts. 
 
 Detailed information on how to run the tool is listed below: 
 
@@ -325,5 +324,5 @@ Additional omics types
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 MOI can be extended to other omics types as well. If supplied with abundance matrices (for example glycomics) MOI can integrate them with MCIA, after performing basic filtering and normalization steps. 
-If translated into the gene level, MOI can integrate them with the exploratory analysis tool, multiMiR, lipidDB as explained above. In addition, if translated to the gene level additional omics types can be integrated with high-level approaches like biotranslator, comparative analysis tool or omnipathr. 
-The user will treat these data as they were gene data.  
+If translated into the gene level, MOI can integrate them with the exploratory analysis tool, multiMiR, lipidDB as explained above. In addition, if translated to the gene level additional omics types can be integrated with high-level approaches like biotranslator, comparative analysis tool or OmnipathR. 
+The user will treat these data as if they were gene data.  
