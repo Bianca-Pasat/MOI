@@ -1,7 +1,7 @@
 Integration
 ================================
 
-Nessecary inputs
+Necessary inputs
 ----------------
 
 The pipeline gives the possibility to integrate simultaneously different
