@@ -2,7 +2,7 @@ Proteins
 ========
 
 
-Nessecary inputs
+Necessary inputs
 ----------------
 
 The pipeline has as input the `count
@@ -144,9 +144,9 @@ DESeq2
 RankProduct
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Inputs for to run RankProduct are the same, with a single difference:
+Inputs for running RankProduct are the same, with a single difference:
 The **condition column** has to be named **cl** and the user has to
-asign **0 to controls and 1 to treatments**
+assign **0 to controls and 1 to treatments**
 
 .. code:: console
 
@@ -158,7 +158,7 @@ asign **0 to controls and 1 to treatments**
 Pathway Enrichment Analysis (PEA)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Last step of the analysis is to perform pathway enrichment analysis with
+The last step of the analysis is to perform pathway enrichment analysis with
 clusterprofiler or biotranslator:
 
 .. code:: bash
